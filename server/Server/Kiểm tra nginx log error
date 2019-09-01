@@ -1,0 +1,1 @@
+➜  ~  (THIS IS SERVER) tail -f /var/log/nginx/error.log

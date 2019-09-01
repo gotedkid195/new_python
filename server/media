@@ -1,0 +1,47 @@
+https://stackoverflow.com/questions/47948586/django-shows-404-error-on-media-files-when-debug-false-in-production
+
+Hoặc trong deploy/nginx/www.conf bổ sung location /media/ {...}
+
+server {
+    listen 80;
+    listen 443 ssl;
+
+    server_name iotwhynot.com nossl.iotwhynot.com;
+    charset     utf-8;
+
+    ssl_certificate         /app/iteslateq-platform/https/cer.pem;
+    ssl_certificate_key     /app/iteslateq-platform/https/key.pem;
+
+    location /static/ {
+        alias /app/iteslateq-platform/static/;
+        autoindex on;
+    }
+
+    location /media/ {
+        alias /app/iteslateq-platform/media/;
+        autoindex on;
+    }
+
+    location / {
+        include uwsgi_params;
+        uwsgi_pass unix:/app/iteslateq-platform/uwsgi.sock;
+        client_max_body_size 100m;
+    }
+}
+
+server {
+    listen 80;
+    listen 443;
+
+    server_name flower-rxdnsxx9.iotwhynot.com;
+    charset     utf-8;
+
+    ssl        on;
+    ssl_certificate         /app/iteslateq-platform/https/cer.pem;
+    ssl_certificate_key     /app/iteslateq-platform/https/key.pem;
+
+
+    location / {
+        proxy_pass http://localhost:5555/;
+    }
+}

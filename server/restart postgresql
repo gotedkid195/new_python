@@ -1,0 +1,2 @@
+(iteslateq-platform) ➜  ~  sudo /etc/init.d/postgresql restart
+[ ok ] Restarting postgresql (via systemctl): postgresql.service.

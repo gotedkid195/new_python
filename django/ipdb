@@ -1,0 +1,8 @@
+pipenv install ipdb
+
+import ipdb; ipdb.sset_trace() 
+
+https://hasil-sharma.github.io/2017/python-ipdb/
+
+The IPdb debug commands
+http://www.georgejhunt.com/olpc/pydebug/pydebug/ipdb.html

@@ -1,0 +1,2 @@
+celery -A iteslateq -l info worker
+

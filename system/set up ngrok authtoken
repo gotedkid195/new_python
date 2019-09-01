@@ -1,0 +1,10 @@
+https://medium.com/@rajeeva/getting-started-with-ngrok-ed67891a74bd
+
+git:(master) ✗ ngrok --version
+ngrok version 2.2.8
+➜  ~ git:(master) ✗ ngrok authtoken 8dtjdtQgVqrPzCqhr38TnD_hYhklhjeHhlghj
+Authtoken saved to configuration file: /home/nguyencanh/.ngrok2/ngrok.yml
+
+➜  ~ git:(master) ✗ ngrok http 8000
+
+➜  ~ git:(master) ✗ ngrok http -region=us 8000

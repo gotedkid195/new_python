@@ -1,0 +1,15 @@
+
+CELERY_TASK_ALWAYS_EAGER=False => em phải chạy celery lên nó mới gởi dc
+
+CELERY_TASK_ALWAYS_EAGER=True => em ko cần chạy celery
+
+nên chạy để code chạy trơn tru
+
+(iteslateq-platform)➜  iteslateq-platform git:(send-email) ✗ python manage.py shell
+Python 3.7.0 (default, Sep 23 2018, 18:58:40) 
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+
+>>> from django.core.mail import BadHeaderError, send_mail
+>>> send_mail('subject', 'message', 'nguyenhuucanh95@gmail.com', ['canh.teslateq@gmail.com'])

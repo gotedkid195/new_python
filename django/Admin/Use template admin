@@ -1,0 +1,15 @@
+from django.contrib import admin
+from django.urls import path
+
+from code_chip.views.ajax_random_imei import AjaxRandomImeiView
+from code_chip.views.ajax_require_imei import AjaxRequireImeiView
+from code_chip.views.code_chip_view import CodeChipView
+from code_chip.views.qr_code import QRCodeView
+
+urlpatterns = [
+    path('create_code/', admin.site.admin_view(QRCodeView.as_view()), name='create_code'),
+    path('view/<int:pk>', admin.site.admin_view(CodeChipView.as_view()), name='view'),
+    path('ajax_require_imei/', admin.site.admin_view(AjaxRequireImeiView.as_view()), name='ajax_require_imei'),
+    path('ajax_random_imei/', admin.site.admin_view(AjaxRandomImeiView.as_view()), name='ajax_random_imei'),
+
+]

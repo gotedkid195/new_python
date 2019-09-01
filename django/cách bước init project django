@@ -1,0 +1,7 @@
+mkdir abcd
+
+abcd git:(master) ✗  pipenv --three
+pipenv intall django 
+pipenv shell
+django-admin startproject mysite .
+ 

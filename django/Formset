@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {# Load the tag library #}
+    {% load bootstrap4 %}
+
+    {# Load CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" type="text/css" media="all" rel="stylesheet">
+    <link href="/static/bootstrap_datepicker_plus/css/datepicker-widget.css" type="text/css" media="all" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="/static/bootstrap_datepicker_plus/js/datepicker-widget.js"></script>
+    <!--Font Awesome Icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/png" href="{% static 'accounts/images/a.png' %}">
+    <link rel="apple-touch-icon" type="image/png" href="{% static 'accounts/images/a.png' %}">
+    <title>Teslateq</title>
+</head>
+<body>
+
+<div class="container-fluid " id="top_header" style="">
+    <div class="row " style="margin: 0 auto">
+        <form class="form-horizontal" method="POST" >
+            {% csrf_token %}
+            {{ formset.management_form }}
+            <div id="form_set">
+                {% for form in formset.forms %}
+                <div class='form-row'>
+                    <div class='table'>
+                        {{ form.as_table }}
+                        <button class="btn btn-success remove-form-row" name="form-0-btn">x</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row spacer">
+                <div class="col-6 ">
+                    <input type="button" value="Add More" id="add_more">
+                </div>
+                <div class="col-6 ">
+                    <button type="submit" class="btn btn-block btn-primary">Create</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script type='text/javascript'>
+    function cloneMore(selector) {
+        var newElement = $(selector).clone(true);
+        var total = $('#id_form-TOTAL_FORMS').val();
+        console.log(newElement, total);
+        newElement.find(':input').each(function() {
+            console.log(this);
+            var name = $(this).attr('name').replace('-'+(parseInt(total)-1)+'-','-' + total + '-');
+            var id = 'id_' + name;
+            if ($(this).attr('type') != 'hidden') {
+                $(this).val('');
+            }
+            $(this).attr({'name': name, 'id': id}).removeAttr('checked');
+        });
+        newElement.find('label').each(function() {
+            var newFor = $(this).attr('for').replace('-' + (total-1) + '-','-' + total + '-');
+            $(this).attr('for', newFor);
+        });
+        total++;
+        $('#id_form-TOTAL_FORMS').val(total);
+        $(selector).after(newElement);
+    };
+    function updateElementIndex(el, prefix, ndx) {
+        var id_regex = new RegExp('(' + prefix + '-\\d+)');
+        var replacement = prefix + '-' + ndx;
+        if (el.id) el.id = el.id.replace(id_regex, replacement);
+        if (el.name) el.name = el.name.replace(id_regex, replacement);
+    };
+    function deleteForm(prefix, btn) {
+        var total = parseInt($('#id_' + prefix + '-TOTAL_FORMS').val());
+        if (total > 1){
+            btn.closest('.table').remove();
+
+            var forms = $('.table');
+            $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);
+            for (var i=0, formCount=forms.length; i<formCount; i++) {
+                $(forms.get(i)).find(':input').each(function() {
+                    updateElementIndex(this, prefix, i);
+                });
+            }
+        }
+        return false;
+    };
+    $('#add_more').click(function() {
+        cloneMore('div.table:last');
+    });
+    $('.remove-form-row').click(function() {
+        deleteForm('form', $(this));
+    });
+
+</script>
+</html>
+
+//////////////////////////////////////////////////////////////////////////////////////////
+
+from django import forms
+from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import ObjectDoesNotExist
+from django.forms import formset_factory
+from django.http import Http404
+
+from django.shortcuts import redirect
+from django.utils.translation import gettext
+from django.views.generic import TemplateView
+from guardian.shortcuts import assign_perm, remove_perm
+
+from accounts.models import Org, Device
+from chip_manager.models import Chip
+from code_chip.models import CodeChip
+from manager.form import FormActive, NoticeExpiredForm
+from manager.models import Station, Wifii
+
+
+class Formwifi(forms.ModelForm):
+    class Meta:
+        model = Wifii
+        fields = ['reset', 'value']
+
+
+class BookForm(forms.Form):
+    name = forms.CharField(
+        label='Book Name',
+        widget=forms.TextInput(attrs={
+            'class': 'form-control',
+            'placeholder': 'Enter Book Name here'
+        })
+    )
+
+
+class aView(TemplateView, LoginRequiredMixin):
+    template_name = 'manager/a.html'
+
+    def post(self, request, *args, **kwargs):
+        parameter_formset = formset_factory(Formwifi)
+        formset = parameter_formset(data=request.POST)
+
+        for form in formset:
+            if form.is_valid():
+                form.save()
+                messages.success(self.request, gettext('Bạn đã tạo 2 thông số thành công. Tiếp theo bạn hãy cài đặt tỉ lệ bên dưới.'))
+            else:
+                messages.success(self.request, gettext(f'Đã tạo thành công.'))
+
+        return redirect(f'/manager/a/')
+
+    def get_context_data(self, **kwargs):
+        context = super(aView, self).get_context_data(**kwargs)
+        user = self.request.user
+        BookFormset = formset_factory(Formwifi, extra=1)
+        context['formset'] = BookFormset()
+        return context
+

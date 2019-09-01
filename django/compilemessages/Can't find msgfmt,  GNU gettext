@@ -1,0 +1,7 @@
+(iteslateq-platform) root@iteslateq:/app/iteslateq-platform# python manage.py compilemessages
+CommandError: Can't find msgfmt. Make sure you have GNU gettext tools 0.15 or newer installed.
+(iteslateq-platform) root@iteslateq:/app/iteslateq-platform# python manage.py makemessages -l 'en'
+CommandError: Can't find msguniq. Make sure you have GNU gettext tools 0.15 or newer installed.
+
+Chay lenh de cài gettext , rôi chay  python manage.py makemessages -l 'en' và  compilemessages binh thuong
+sudo apt-get install gettext

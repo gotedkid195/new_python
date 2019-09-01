@@ -1,0 +1,22 @@
+user = get_object_or_404(User, pk=id_user)
+        perms_user = []
+        for permission in Station._meta.permissions:
+            perms_user.append({
+                'code_name': permission[0],
+                'label': permission[1],
+            })
+        return render(
+            request, 'manager/monitor.html', {
+                'pk': pk,
+
+                'org': request.user.org,
+                'forms': forms,
+                'status_control': status_control,
+                'hiden_is_main': hiden_is_main,
+                'hiden_control': hiden_control,
+                'hiden_max_min': hiden_max_min,
+                'perms_user': perms_user,
+                'get_perms': get_perms(user, station),
+                'page_current': "monitor",
+            },
+        )

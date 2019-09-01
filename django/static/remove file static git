@@ -1,0 +1,268 @@
+➜  iteslateq-platform git:(master) ✗ git co edit-enable-translate 
+error: The following untracked working tree files would be overwritten by checkout:
+	static/__init__.py
+	static/accounts/__init__.py
+	static/accounts/css/login.css
+	static/accounts/js/login.js
+	static/accounts/style.css
+	static/accounts/style1.css
+	static/admin/css/autocomplete.css
+	static/admin/css/base.css
+	static/admin/css/changelists.css
+	static/admin/css/dashboard.css
+	static/admin/css/fonts.css
+	static/admin/css/forms.css
+	static/admin/css/login.css
+	static/admin/css/responsive.css
+	static/admin/css/responsive_rtl.css
+	static/admin/css/rtl.css
+	static/admin/css/vendor/select2/LICENSE-SELECT2.md
+	static/admin/css/vendor/select2/select2.css
+	static/admin/css/vendor/select2/select2.min.css
+	static/admin/css/widgets.css
+	static/admin/fonts/LICENSE.txt
+	static/admin/fonts/README.txt
+	static/admin/fonts/Roboto-Bold-webfont.woff
+	static/admin/fonts/Roboto-Light-webfont.woff
+	static/admin/fonts/Roboto-Regular-webfont.woff
+	static/admin/img/LICENSE
+	static/admin/img/README.txt
+	static/admin/img/calendar-icons.svg
+	static/admin/img/gis/move_vertex_off.svg
+	static/admin/img/gis/move_vertex_on.svg
+	static/admin/img/icon-addlink.svg
+	static/admin/img/icon-alert.svg
+	static/admin/img/icon-calendar.svg
+	static/admin/img/icon-changelink.svg
+	static/admin/img/icon-clock.svg
+	static/admin/img/icon-deletelink.svg
+	static/admin/img/icon-no.svg
+	static/admin/img/icon-unknown-alt.svg
+	static/admin/img/icon-unknown.svg
+	static/admin/img/icon-viewlink.svg
+	static/admin/img/icon-yes.svg
+	static/admin/img/inline-delete.svg
+	static/admin/img/search.svg
+	static/admin/img/selector-icons.svg
+	static/admin/img/sorting-icons.svg
+	static/admin/img/tooltag-add.svg
+	static/admin/img/tooltag-arrowright.svg
+	static/admin/js/SelectBox.js
+	static/admin/js/SelectFilter2.js
+	static/admin/js/actions.js
+	static/admin/js/actions.min.js
+	static/admin/js/admin/DateTimeShortcuts.js
+	static/admin/js/admin/RelatedObjectLookups.js
+	static/admin/js/autocomplete.js
+	static/admin/js/calendar.js
+	static/admin/js/cancel.js
+	static/admin/js/change_form.js
+	static/admin/js/collapse.js
+	static/admin/js/collapse.min.js
+	static/admin/js/core.js
+	static/admin/js/inlines.js
+	static/admin/js/inlines.min.js
+	static/admin/js/jquery.init.js
+	static/admin/js/popup_response.js
+	static/admin/js/prepopulate.js
+	static/admin/js/prepopulate.min.js
+	static/admin/js/prepopulate_init.js
+	static/admin/js/timeparse.js
+	static/admin/js/urlify.js
+	static/admin/js/vendor/jquery/LICENSE.txt
+	static/admin/js/vendor/jquery/jquery.js
+	static/admin/js/vendor/jquery/jquery.min.js
+	static/admin/js/vendor/select2/LICENSE.md
+	static/admin/js/vendor/select2/i18n/ar.js
+	static/admin/js/vendor/select2/i18n/az.js
+	static/admin/js/vendor/select2/i18n/bg.js
+	static/admin/js/vendor/select2/i18n/ca.js
+	static/admin/js/vendor/select2/i18n/cs.js
+	static/admin/js/vendor/select2/i18n/da.js
+	static/admin/js/vendor/select2/i18n/de.js
+	static/admin/js/vendor/select2/i18n/el.js
+	static/admin/js/vendor/select2/i18n/en.js
+	static/admin/js/vendor/select2/i18n/es.js
+	static/admin/js/vendor/select2/i18n/et.js
+	static/admin/js/vendor/select2/i18n/eu.js
+	static/admin/js/vendor/select2/i18n/fa.js
+	static/admin/js/vendor/select2/i18n/fi.js
+	static/admin/js/vendor/select2/i18n/fr.js
+	static/admin/js/vendor/select2/i18n/gl.js
+	static/admin/js/vendor/select2/i18n/he.js
+	static/admin/js/vendor/select2/i18n/hi.js
+	static/admin/js/vendor/select2/i18n/hr.js
+	static/admin/js/vendor/select2/i18n/hu.js
+	static/admin/js/vendor/select2/i18n/id.js
+	static/admin/js/vendor/select2/i18n/is.js
+	static/admin/js/vendor/select2/i18n/it.js
+	static/admin/js/vendor/select2/i18n/ja.js
+	static/admin/js/vendor/select2/i18n/km.js
+	static/admin/js/vendor/select2/i18n/ko.js
+	static/admin/js/vendor/select2/i18n/lt.js
+	static/admin/js/vendor/select2/i18n/lv.js
+	static/admin/js/vendor/select2/i18n/mk.js
+	static/admin/js/vendor/select2/i18n/ms.js
+	static/admin/js/vendor/select2/i18n/nb.js
+	static/admin/js/vendor/select2/i18n/nl.js
+	static/admin/js/vendor/select2/i18n/pl.js
+	static/admin/js/vendor/select2/i18n/pt-BR.js
+	static/admin/js/vendor/select2/i18n/pt.js
+	static/admin/js/vendor/select2/i18n/ro.js
+	static/admin/js/vendor/select2/i18n/ru.js
+	static/admin/js/vendor/select2/i18n/sk.js
+	static/admin/js/vendor/select2/i18n/sr-Cyrl.js
+	static/admin/js/vendor/select2/i18n/sr.js
+	static/admin/js/vendor/select2/i18n/sv.js
+	static/admin/js/vendor/select2/i18n/th.js
+	static/admin/js/vendor/select2/i18n/tr.js
+	static/admin/js/vendor/select2/i18n/uk.js
+	static/admin/js/vendor/select2/i18n/vi.js
+	static/admin/js/vendor/select2/i18n/zh-CN.js
+	static/admin/js/vendor/select2/i18n/zh-TW.js
+	static/admin/js/vendor/select2/select2.full.js
+	static/admin/js/vendor/select2/select2.full.min.js
+	static/admin/js/vendor/xregexp/LICENSE.txt
+	static/admin/js/vendor/xregexp/xregexp.js
+	static/admin/js/vendor/xregexp/xregexp.min.js
+	static/bootstrap/css/bootstrap-theme.css
+	static/bootstrap/css/bootstrap-theme.css.map
+	static/bootstrap/css/bootstrap-theme.min.css
+	static/bootstrap/css/bootstrap-theme.min.css.map
+	static/bootstrap/css/bootstrap.css
+	static/bootstrap/css/bootstrap.css.map
+	static/bootstrap/css/bootstrap.min.css
+	static/bootstrap/css/bootstrap.min.css.map
+	static/bootstrap/fonts/glyphicons-halflings-regular.eot
+	static/bootstrap/fonts/glyphicons-halflings-regular.svg
+	static/bootstrap/fonts/glyphicons-halflings-regular.ttf
+	static/bootstrap/fonts/glyphicons-halflings-regular.woff
+	static/bootstrap/fonts/glyphicons-halflings-regular.woff2
+	static/bootstrap/js/bootstrap.js
+	static/bootstrap/js/bootstrap.min.js
+	static/bootstrap/js/npm.js
+	static/colorfield/jscolor/jscolor.js
+	static/colorfield/jscolor/jscolor.min.js
+	static/debug_toolbar/css/print.css
+	static/debug_toolbar/css/toolbar.css
+	static/debug_toolbar/img/ajax-loader.gif
+	static/debug_toolbar/img/back.png
+	static/debug_toolbar/img/back_hover.png
+	static/debug_toolbar/img/close.png
+	static/debug_toolbar/img/close_hover.png
+	static/debug_toolbar/img/djdt_vertical.png
+	static/debug_toolbar/img/indicator.png
+	static/debug_toolbar/js/jquery_existing.js
+	static/debug_toolbar/js/jquery_post.js
+	static/debug_toolbar/js/jquery_pre.js
+	static/debug_toolbar/js/toolbar.js
+	static/debug_toolbar/js/toolbar.profiling.js
+	static/debug_toolbar/js/toolbar.sql.js
+	static/debug_toolbar/js/toolbar.template.js
+	static/debug_toolbar/js/toolbar.timer.js
+	static/django_extensions/css/jquery.autocomplete.css
+	static/django_extensions/img/indicator.gif
+	static/django_extensions/js/jquery.ajaxQueue.js
+	static/django_extensions/js/jquery.autocomplete.js
+	static/django_extensions/js/jquery.bgiframe.js
+	static/drf-yasg/immutable.min.js
+	static/drf-yasg/insQ.min.js
+	static/drf-yasg/redoc-init.js
+	static/drf-yasg/redoc-old/redoc.min.js
+	static/drf-yasg/redoc/redoc-logo.png
+	static/drf-yasg/redoc/redoc.min.js
+	static/drf-yasg/style.css
+	static/drf-yasg/swagger-ui-dist/absolute-path.js
+	static/drf-yasg/swagger-ui-dist/favicon-32x32.png
+	static/drf-yasg/swagger-ui-dist/index.js
+	static/drf-yasg/swagger-ui-dist/oauth2-redirect.html
+	static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+	static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+	static/drf-yasg/swagger-ui-dist/swagger-ui.css
+	static/drf-yasg/swagger-ui-init.js
+	static/drf-yasg/url-polyfill.min.js
+	static/images/banner_teslateq.png
+	static/images/lang_en.jpg
+	static/images/lang_vi.jpg
+	static/mapwidgets/css/magnific-popup.css
+	static/mapwidgets/css/magnific-popup.min.css
+	static/mapwidgets/css/map_widgets.css
+	static/mapwidgets/css/map_widgets.min.css
+	static/mapwidgets/font/fontello.eot
+	static/mapwidgets/font/fontello.svg
+	static/mapwidgets/font/fontello.ttf
+	static/mapwidgets/font/fontello.woff
+	static/mapwidgets/font/fontello.woff2
+	static/mapwidgets/images/no-map-image.png
+	static/mapwidgets/images/ripple.gif
+	static/mapwidgets/js/django_mw_base.js
+	static/mapwidgets/js/jquery.custom.magnific-popup.js
+	static/mapwidgets/js/jquery.custom.magnific-popup.min.js
+	static/mapwidgets/js/jquery_class.js
+	static/mapwidgets/js/mw_google_point_field.js
+	static/mapwidgets/js/mw_google_point_field.min.js
+	static/mapwidgets/js/mw_google_point_field_generater.js
+	static/mapwidgets/js/mw_google_point_inline_field.min.js
+	static/rest_framework/css/bootstrap-theme.min.css
+	static/rest_framework/css/bootstrap-tweaks.css
+	static/rest_framework/css/bootstrap.min.css
+	static/rest_framework/css/default.css
+	static/rest_framework/css/font-awesome-4.0.3.css
+	static/rest_framework/css/prettify.css
+	static/rest_framework/docs/css/base.css
+	static/rest_framework/docs/css/highlight.css
+	static/rest_framework/docs/css/jquery.json-view.min.css
+	static/rest_framework/docs/img/favicon.ico
+	static/rest_framework/docs/img/grid.png
+	static/rest_framework/docs/js/api.js
+	static/rest_framework/docs/js/highlight.pack.js
+	static/rest_framework/docs/js/jquery.json-view.min.js
+	static/rest_framework/fonts/fontawesome-webfont.eot
+	static/rest_framework/fonts/fontawesome-webfont.svg
+	static/rest_framework/fonts/fontawesome-webfont.ttf
+	static/rest_framework/fonts/fontawesome-webfont.woff
+	static/rest_framework/fonts/glyphicons-halflings-regular.eot
+	static/rest_framework/fonts/glyphicons-halflings-regular.svg
+	static/rest_framework/fonts/glyphicons-halflings-regular.ttf
+	static/rest_framework/fonts/glyphicons-halflings-regular.woff
+	static/rest_framework/fonts/glyphicons-halflings-regular.woff2
+	static/rest_framework/img/glyphicons-halflings-white.png
+	static/rest_framework/img/glyphicons-halflings.png
+	static/rest_framework/img/grid.png
+	static/rest_framework/js/ajax-form.js
+	static/rest_framework/js/bootstrap.min.js
+	static/rest_framework/js/coreapi-0.1.1.js
+	static/rest_framework/js/csrf.js
+	static/rest_framework/js/default.js
+	static/rest_framework/js/jquery-3.3.1.min.js
+	static/rest_framework/js/prettify-min.js
+Please move or remove them before you can switch branches.
+Aborting
+➜  iteslateq-platform git:(master) ✗ 
+➜  iteslateq-platform git:(master) ✗ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	static/
+
+nothing added to commit but untracked files present (use "git add" to track)
+➜  iteslateq-platform git:(master) ✗ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	static/
+
+nothing added to commit but untracked files present (use "git add" to track)
+➜  iteslateq-platform git:(master) ✗ rm -rf static
+➜  iteslateq-platform git:(master) git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+nothing to commit, working directory clean
+➜  iteslateq-platform git:(master) git co edit-enable-translate 
+Switched to branch 'edit-enable-translate'
+➜  iteslateq-platform git:(edit-enable-translate) git status
+On branch edit-enable-translate

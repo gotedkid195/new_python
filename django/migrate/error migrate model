@@ -1,0 +1,5 @@
+Khi python manage.py migrate báo lỗi, 
+hãy xóa file db.sqlite3 va các file từ 0002_auto_20180929_1059.py ... ở flowder mình migrate
+chạy lại lệnh"
+python manage.py makemigrations
+python manage.py migrate

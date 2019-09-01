@@ -1,0 +1,29 @@
+➜  ~ git:(master) ✗ sudo apt-get install unrar  
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+You might want to run 'apt-get -f install' to correct these:
+The following packages have unmet dependencies:
+ linux-generic-hwe-16.04 : Depends: linux-headers-generic-hwe-16.04 (= 4.15.0.50.71) but 4.15.0.47.68 is to be installed
+E: Unmet dependencies. Try 'apt-get -f install' with no packages (or specify a solution).
+
+// Loi nen phai cai them package
+➜  ~ git:(master) ✗ sudo apt --fix-broken install
+..................
+......
+done
+➜  ~ git:(master) ✗ sudo apt-get install unrar   
+[sudo] password for nguyencanh: 
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  libdb5.3:i386 linux-headers-4.15.0-42 linux-headers-4.15.0-42-generic
+  linux-headers-4.15.0-43 linux-headers-4.15.0-43-generic
+  linux-headers-4.15.0-45 linux-headers-4.15.0-45-generic
+  linux-headers-4.15.0-46 linux-headers-4.15.0-46-generic
+......................
+
+Setting up unrar (1:5.3.2-1+deb9u1build0.16.04.1) ...
+update-alternatives: using /usr/bin/unrar-nonfree to provide /usr/bin/unrar (unrar) in auto mode
+➜  ~ git:(master) ✗ 

@@ -1,0 +1,16 @@
+history | grep stash
+
+
+git diff
+git stash
+git status
+
+
+ 1862  git stash log
+ 1863  git stash list
+ 1864  git stash pop
+ 1865  git diff
+ 1866  git stash pop
+ 1867  git reset --hard
+ 1868  git stash list
+ 1869  git stash pop

@@ -1,0 +1,9 @@
+
+Để khởi động lại linux, chỉ cần gọi lệnh khởi động lại trực tiếp mà không có bất kỳ tùy chọn nào.
+# reboot
+Tiếp theo chờ restart sercer 5-30 phút
+
+
+Lệnh shutdown mà dùng sai, thi server chết luôn
+
+https://www.binarytides.com/linux-command-shutdown-reboot-restart-system/

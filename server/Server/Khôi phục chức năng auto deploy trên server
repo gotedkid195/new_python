@@ -1,0 +1,88 @@
+ 4077  cd /app/iteslateq-platform
+ 4078  git status
+ 4079  git 
+ 4080  git branch
+ 4081  exit
+ 4082  cd app/iteslateq_platform
+ 4083  cd app/teslateq_platform
+ 4084  cd app/itesla_platform
+ 4085  cd /app/iteslateq-platform
+ 4086  git status
+ 4087  exit
+ 4088  cd /app/iteslateq-platform
+ 4089  git status
+ 4090  exit
+ 4091  cd app/iteslateq-platform
+ 4092  cd app/iteslateq-platforms
+ 4093  cd /app/iteslateq-platform
+ 4094  git status
+ 4095  git log
+ 4096  exit
+ 4097  cd app/iteslateq-platform
+ 4098  cd /app/iteslateq-platform
+ 4099  git status
+ 4100  exit
+ 4101  ls
+ 4102  cd /app
+ 4103  ls
+ 4104  cd iteslateq-platform
+ 4105  ls
+ 4106  ls -al
+ 4107  git status
+ 4108  git log
+ 4109  git pull
+ 4110  supervisorctl
+ 4111  ls
+ 4112  cd deploy/scripts
+ 4113  ls
+ 4114  chmod +x .*
+ 4115  ls -al
+ 4116  chmod +x ./*
+ 4117  supervisorctl
+ 4118  status
+ 4119  git status
+ 4120  ./start_uwsgi_api.sh
+ 4121  touch /app/iteslateq-platform/newrelic.ini
+ 4122  cat start_uwsgi
+ 4123  cat start_uwsgi.sh
+ 4124  ./start_uwsgi_api.sh
+ 4125  supervisorctl
+ 4126  exit
+ 4127  cd /app
+ 4128  ls
+ 4129  cd iteslateq-platform
+ 4130  ls -al
+ 4131  nginx -t
+ 4132  mkdir /app/iteslateq-platform/https/
+ 4133  cd /app/iteslateq-platform/https/
+ 4134  vim cer.pem
+ 4135  vim key.pem
+ 4136  nginx -t
+ 4137  git show -s --format=%ci HEAD | sed -e 's/\+.*//' | sed -e 's/[-|:]/\./g' | sed -e 's/ /-/' | sed -e 's/\.[^\.]*$//'
+ 4138* git show -s --format=%ci HEAD | sed -e 's/\\+.+//' | sed -e 's/[-|:]/\./g' | sed -e 's/ /-/' | sed -e 's/\.[^\.]*$//'
+ 4139* git add .
+ 4140* git status
+ 4141* git reset
+ 4142* git status
+ 4143* ls -al
+➜  ~  (THIS IS SERVER) 
+
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   deploy/scripts/start_uwsgi.sh
+	modified:   deploy/scripts/start_uwsgi_api.sh
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	celerybeat.pid
+	https/
+	newrelic.ini
+
+no changes added to commit (use "git add" and/or "git commit -a")

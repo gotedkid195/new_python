@@ -1,0 +1,12 @@
+1. Kiểm tra setting.py
+chu y trong file setting.py phai dung ngoac don
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+
+2.Kiểm tra dir to station
+sudo nano /etc/nginx/sites-available/sample_project.conf
+check:
+    location /static/ {
+        alias   /home/ubuntu/static/;
+    }

@@ -1,0 +1,21 @@
+related_name='local-alarm'  // sai không cho phép
+related_name='local_alarm'  // cho phép
+
+(iteslateq-platform)➜  iteslateq-platform git:(interface-local-alram) ✗ python manage.py makemigrations
+Performing system checks...
+
+Unhandled exception in thread started by <function check_errors.<locals>.wrapper at 0x7fce48fb10d0>
+Traceback (most recent call last):
+  File "/home/nguyencanh/.local/share/virtualenvs/iteslateq-platform-pxz4rE4Y/lib/python3.7/site-packages/django/utils/autoreload.py", line 225, in wrapper
+    fn(*args, **kwargs)
+  File "/home/nguyencanh/.local/share/virtualenvs/iteslateq-platform-pxz4rE4Y/lib/python3.7/site-packages/channels/management/commands/runserver.py", line 69, in inner_run
+    self.check(display_num_errors=True)
+  File "/home/nguyencanh/.local/share/virtualenvs/iteslateq-platform-pxz4rE4Y/lib/python3.7/site-packages/django/core/management/base.py", line 410, in check
+    raise SystemCheckError(msg)
+django.core.management.base.SystemCheckError: SystemCheckError: System check identified some issues:
+
+ERRORS:
+chip_manager.LocalAlarm.config: (fields.E306) The name 'local-alarm' is invalid related_name for field LocalAlarm.config
+	HINT: Related name must be a valid Python identifier or end with a '+'
+
+

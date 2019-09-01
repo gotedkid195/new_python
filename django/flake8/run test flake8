@@ -1,0 +1,4 @@
+Để chay test flake8 kiêm tra loi code
+$ pipenv install pre-commit
+$ flake8
+

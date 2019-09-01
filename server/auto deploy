@@ -1,0 +1,3 @@
+git pull
+
+fab -H root@27.0.15.134 deploy                             # fab -H <user>@<host> deploy

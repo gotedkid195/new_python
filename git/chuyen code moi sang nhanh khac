@@ -1,0 +1,47 @@
+10008  pipenv shell
+10009  python manage.py runserver
+10010  pipenv shell
+10011  git add .
+10012  git cm -m "send new data"
+10013  git add .
+10014  git cm -m "send new data"
+10015  git add .
+10016  git cm -m "send new data"
+10017  git add .
+10018  git cm -m "send new data"
+10019  git push
+10020  git co master
+10021  git pull
+10022  git co -
+10023  git merge master
+10024  python manage.py runserver
+10025  python manage.py test_chat
+10026  ngrok http -region=ap 8000
+10027  celery -A iteslateq -l info worker
+10028  python manage.py shell
+10029  python
+10030  git status
+10031  git add .
+10032  git cm -m "WIP"
+10033  pipenv shell
+10034  git cm -m "WIP"
+10035  git status
+10036  git cm -m "WIP"
+10037  git status
+10038  git addd .
+10039  git add .
+10040  git cm -m "WIP"
+10041  git add .
+10042  git cm -m "WIP"
+10043  git status
+10044  git co -b feature-local-sms
+10045  git push -u origin HEAD
+10046  git co -
+10047  git reset --soft HEAD~1
+10048  git status
+10049  cd iteslateq-platform
+10050  pipenv shell
+10051  python manage.py runserver
+10052  pipenv shell
+10053  git diff
+10054  history

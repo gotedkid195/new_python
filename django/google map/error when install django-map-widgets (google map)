@@ -1,0 +1,6 @@
+django.core.exceptions.ImproperlyConfigured: Could not find the GDAL library 
+(tried "gdal", "GDAL", "gdal2.2.0", "gdal2.1.0", "gdal2.0.0", "gdal1.11.0", "gdal1.10.0", "gdal1.9.0").
+Is GDAL installed? If it is, try setting GDAL_LIBRARY_PATH in your settings.
+  
+   
+sudo apt-get install binutils libproj-dev gdal-bin

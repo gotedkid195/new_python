@@ -1,0 +1,157 @@
+
+ 1199  sudo mkdir -p /webapps/hello_django/
+ 1200  sudo chown hello /webapps/hello_django/
+ 1201  sudo su - hello
+ 1202  whoami
+ 1203  cd /webapps/hello_django/
+ 1204  virtualenv .
+ 1205  cd
+ 1206  cd /webapps/
+ 1207  virtualenv hello_django/
+ 1208  cd
+ 1209  cd /webapps/
+ 1210  ls
+ 1211  cd hello_django/
+ 1212  ls
+ 1213  cd hello/
+ 1214  cd
+ 1215  cd django_env/
+ 1216  ls
+ 1217  cd
+ 1218  cd /webapps/hello_django/
+ 1219  cd /webapps/
+ 1220  source hello_django/bin/activate
+ 1221  whoami
+ 1222  sudo chmod u+x bin/gunicorn_start
+ 1223  cd hello_django/
+ 1224  sudo chmod u+x bin/gunicorn_start
+ 1225  ls
+ 1226  cd bin
+ 1227  ls
+ 1228  cd ..
+ 1229  sudo chmod u+x bin/gunicorn_start.bash
+ 1230  bin/gunicorn_start
+ 1231  bin/gunicorn_start.bash
+ 1232  cd /etc/supervisor/conf.d/
+ 1233  ls
+ 1234  nano hello.conf
+ 1235  ls
+ 1236  cd
+ 1237  mkdir -p /webapps/hello_django/logs/
+ 1238  touch /webapps/hello_django/logs/gunicorn_supervisor.log 
+ 1239  ls
+ 1240  cd /webapps/hello_django/
+ 1241  cd ..
+ 1242  source hello_django/bin/activate
+ 1243  sudo ln -s /etc/nginx/sites-available/hello /etc/nginx/sites-enabled/hello
+ 1244  sudo service nginx restart
+ 1245  cd hello_django/
+ 1246  sudo service nginx restart
+ 1247  /etc/supervisor/conf.d/
+ 1248  cd /etc/supervisor/conf.d/
+ 1249  ls
+ 1250  nano hello.conf 
+ 1251  cd /etc/nginx/sites-available/hello
+ 1252  cd /etc/nginx/sites-available/
+ 1253  ls
+ 1254  nano hello.nginxconf
+ 1255  cd /webapps/hello_django/
+ 1256  ls
+ 1257  cd logs/
+ 1258  ls
+ 1259  nano nginx-access.log
+ 1260  ls
+ 1261  nano nginx-error.log
+ 1262  ls
+ 1263  cd ..
+ 1264  cd run/
+ 1265  ls
+ 1266  nano gunicorn.sock
+ 1267  cd ..
+ 1268  cd bin/
+ 1269  ls
+ 1270  cd ..
+ 1271  cd..
+ 1272  sudo service nginx start
+ 1273  systemctl status nginx.service
+ 1274  sudo supervisorctl reread
+ 1275  sudo supervisorctl start hello
+ 1276  systemctl status nginx.service
+ 1277  journalctl -xe
+ 1278  cd /webapps/hello_django/
+ 1279  cd ..
+ 1280  source hello_django/bin/activate
+ 1281  cd /webapps/hello_django/
+ 1282  ls
+ 1283  source bin/activate
+ 1284  sudo service nginx restart 
+ 1285  journalctl -xe
+ 1286  cd /etc/nginx/sites-available/
+ 1287  ls
+ 1288  rm hello.nginxconf 
+ 1289  ls
+ 1290  cd
+ 1291  sudo service nginx restart 
+ 1292  cd  /etc/nginx/sites-enabled/
+ 1293  ls
+ 1294  rm hello 
+ 1295  ls
+ 1296  cd
+ 1297  sudo service nginx restart 
+ 1298  nano /etc/nginx/sites-available/hello.conf
+ 1299  sudo ln -s /etc/nginx/sites-available/hello /etc/nginx/sites-enabled/hello
+ 1300  cd  /etc/nginx/sites-available/hello.conf
+ 1301  cd  /etc/nginx/sites-available
+ 1302  ls
+ 1303  cd 
+ 1304  sudo service nginx restart 
+ 1305  nginx -t
+ 1306  nano /etc/nginx/nginx.conf
+ 1307  cd  /etc/nginx/sites-available
+ 1308  ls
+ 1309  nano hello.conf 
+ 1310  nano /etc/nginx/nginx.conf
+ 1311  cd ..
+ 1312  cd sites-enabled/
+ 1313  ls
+ 1314  rm hello 
+ 1315  cd ..
+ 1316  cd sites-available/
+ 1317  ls
+ 1318  cd 
+ 1319  sudo ln -s /etc/nginx/sites-available/hello.conf /etc/nginx/sites-enabled/hello.conf
+ 1320  sudo service nginx restart 
+ 1321  Chmod -R 777 /webapps
+ 1322  chmod -R 777 /webapps
+ 1323  chmod -R 777 /webapps/hello_django/
+ 1324  cd /var/logs
+ 1325  cd /var/log/
+ 1326  ls -al
+ 1327  cd nginx/
+ 1328  ls
+ 1329  tail error.log
+ 1330  tail access.log
+ 1331  ping iot.teslateq.vn
+ 1332  cd /webapps/hello_django/run/
+ 1333  ls
+ 1334  ls -al
+ 1335  cd ..
+ 1336  sudo supervisorctl status hello 
+ 1337  cd bin
+ 1338  ls
+ 1339  cd /etc/supervisor/conf.d/
+ 1340  ls
+ 1341  nano hello.conf 
+ 1342  sudo supervisorctl status hello 
+
+ 1344  sudo supervisorctl restart hello 
+ 1345  sudo supervisorctl status hello 
+ 1346  sudo supervisorctl reload
+ 1347  sudo supervisorctl restart hello 
+ 1348  sudo supervisorctl status hello 
+ 1349  tail /var/log/supervisor/supervisord.log 
+ 1350  cat /webapps/hello_django/logs/gunicorn_supervisor.log
+ 1351  ls -al /webapps/hello_django/run/gunicorn.sock
+ 1352  rm -rf /webapps/hello_django/run/gunicorn.sock
+ 1353  sudo supervisorctl restart hello 
+ 1354  sudo supervisorctl status hello 

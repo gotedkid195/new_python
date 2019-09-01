@@ -1,0 +1,18 @@
+  perms_user = []
+        for permission in Station._meta.permissions:
+            perms_user.append({
+                'code_name': permission[0],
+                'label': permission[1],
+            })
+        return render(
+            request, 'manager/report.html', {
+                'pk': station.id,
+                'station': station,
+                'org': request.user.org,
+                'forms': forms,
+                'status_control': status_control,
+                'perms_user': perms_user,
+                'get_perms': get_perms(user, station),
+                'page_current': "report",
+            },
+        )

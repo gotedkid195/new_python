@@ -1,0 +1,13 @@
+Kiem tra sô luong khi filter dung count()
+onoff = OnOff.objects.filter(config=config_obj)
+onoff.count() =>> Correct
+
+Nhung neu them thuoc tinh phia sau se khong dung count() duoc
+onoff = OnOff.objects.filter(config=config_obj).last()
+onoff.count() =>> Wrong
+
+Tested:
+ipdb> onoff                                                                     
+<OnOff: OnOff object (1)>
+ipdb> onoff.count()                                                             
+*** AttributeError: 'OnOff' object has no attribute 'count'

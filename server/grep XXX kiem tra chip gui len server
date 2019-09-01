@@ -1,0 +1,39 @@
+ ➜ ✗  (THIS-IS-SERVER)$ tail -f /var/log/nginx/api_access.log | grep XXX
+ 
+ tail -f /var/log/nginx/web_access.log | grep 72
+
+
+tail -f /var/log/nginx/access.log | grep XXX
+
+XXX la code chip
+
+Start celery server
+
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS-IS-SERVER)$ celery -A iteslateq -l info worker
+
+
+supervisorctl restart celery:celery_00
+
+
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS-IS-SERVER)$ tail -f /var/log/iotwhynot/celery.err.log | grep 11
+
+[2019-02-25 09:14:27,702: WARNING/ForkPoolWorker-6] Teslateq Box-Đồng hồ điện năng
+[2019-02-25 09:14:27,702: WARNING/ForkPoolWorker-6] CS tiêu thụ Dec:0.0 Hex:00000000
+[2019-02-25 09:14:27,715: WARNING/ForkPoolWorker-6] CS tức thời Dec:0.0 Hex:00000000
+[2019-02-25 09:14:27,726: WARNING/ForkPoolWorker-6] Teslateq Box-Relay
+[2019-02-25 09:14:27,726: WARNING/ForkPoolWorker-6] Teslateq Box-Nhiệt độ, độ ẩm
+[2019-02-25 09:14:27,727: WARNING/ForkPoolWorker-6] Độ ẩm Dec:0.0 Hex:0000
+[2019-02-25 09:14:27,737: WARNING/ForkPoolWorker-6] Nhiệt độ Dec:0.0 Hex:0000
+[2019-02-25 09:14:27,751: INFO/ForkPoolWorker-6] Task chip_manager.tasks.store_sensor_data[ee82db14-c387-48d0-bf1c-618c6ae58b0d] succeeded in 0.07673822797369212s: None
+[2019-02-25 09:14:32,176: INFO/MainProcess] Received task: chip_manager.tasks.store_sensor_data[baca5924-b7ed-4ff1-a148-bc78a74c5851]  
+[2019-02-25 09:14:32,179: WARNING/ForkPoolWorker-1] 6
+[2019-02-25 09:14:32,180: WARNING/ForkPoolWorker-1] 000000000000000000000000
+[2019-02-25 09:14:32,199: WARNING/ForkPoolWorker-1] Teslateq Box-Đồng hồ điện năng
+[2019-02-25 09:14:32,199: WARNING/ForkPoolWorker-1] CS tiêu thụ Dec:0.0 Hex:00000000
+[2019-02-25 09:14:32,215: WARNING/ForkPoolWorker-1] Đã interval_log CS tiêu thụ: 0.0 time: 8s
+[2019-02-25 09:14:32,216: WARNING/ForkPoolWorker-1] CS tức thời Dec:0.0 Hex:00000000
+[2019-02-25 09:14:32,239: WARNING/ForkPoolWorker-1] Teslateq Box-Relay
+[2019-02-25 09:14:32,240: WARNING/ForkPoolWorker-1] Teslateq Box-Nhiệt độ, độ ẩm
+[2019-02-25 09:14:32,240: WARNING/ForkPoolWorker-1] Độ ẩm Dec:0.0 Hex:0000
+[2019-02-25 09:14:32,255: WARNING/ForkPoolWorker-1] Nhiệt độ Dec:0.0 Hex:0000
+[2019-02-25 09:14:32,272: INFO/ForkPoolWorker-1] Task chip_manager.tasks.store_sensor_data[baca5924-b7ed-4ff1-a148-bc78a74c5851] succeeded in 0.09324091300368309s: None

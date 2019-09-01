@@ -1,0 +1,24 @@
+import datetime
+import socket
+
+from django.core.management.base import BaseCommand
+from django.core.mail import send_mail
+from django.utils import timezone
+
+from iteslateq.settings import env
+
+
+class Command(BaseCommand):
+    def handle(self, *args, **kwargs):
+        try:
+            hostname = socket.gethostname()
+        except AttributeError:
+            hostname = 'localhost'
+
+        subject = f'{hostname} Test send email'
+        format = timezone.now() + datetime.timedelta(hours=7)
+        now = format.strftime("%H:%M:%S %d-%m-%Y")
+        message = f'{hostname} message send at {now}'
+        from_email = 'nguyenhuucanh95@gmail.com'
+        send_mail(subject, message, from_email, ['canh.teslateq@gmail.com', 'canhnh@teslateq.vn'])
+        self.stdout.write(f'{hostname} Send email Ok {now} {env("SENDGRID_API_KEY")}')

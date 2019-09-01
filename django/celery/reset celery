@@ -1,0 +1,12 @@
+supervisorctl stop all
+
+supervisorctl start uwsgi
+
+celery -A iteslateq -l info worker
+
+Kiem tra loi -> kiem tra xong start lai server
+
+supervisorctl restart all
+
+service nginx restart
+

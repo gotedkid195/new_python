@@ -1,0 +1,3 @@
+Exit ra khỏi pipenv // exit
+Rồi remove env của cái folder đó // pipenv --rm
+Rồi install lại

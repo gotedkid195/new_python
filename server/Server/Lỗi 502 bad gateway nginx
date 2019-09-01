@@ -1,0 +1,114 @@
+
+ 4314  cd /var/log
+ 4315  ls
+ 4316  cd iotwhynot
+ 4317  ls -al
+ 4318  tail celery.err.log
+ 4319  cd ../nginx
+ 4320  ls -al
+ 4321  tail access.log
+ 4322  tail web_access.log
+ 4323  tail -r web_access.log
+ 4324  tail -f web_access.log
+ 4325  tail -f  api__access.log
+ 4326  tail -f  api_access.log
+ 4327  cd /app
+ 4328  ls
+ 4329  cd iteslateq-platform
+ 4330  cat deploy/supervisor/celery.ini
+ 4331  ps aux | grep celery
+ 4332  supervisor
+ 4333  supervisorctl
+ 4334  netstat -ltnpu
+ 4335  ls
+ 4336  cd /etc/supervisor/conf.d
+ 4337  ls
+ 4338  vim celery.conf
+ 4339  supervisor
+ 4340  supervisorctl
+ 4341  ls -al /var/log/iotwhynot
+ 4342  supervisorctl
+ 4343  cat celery.conf
+ 4344  tail /var/logs/iotwhynot/celery.log
+ 4345  /var/log/iotwhynot/celery.err.log
+ 4346  tail /var/log/iotwhynot/celery.err.log
+ 4347  cd /app/iteslateq-platform
+ 4348  cd /var/log/iotwhynot/
+ 4349  ls
+ 4350  cd -
+ 4351  pipenv install
+ 4352  vim celery.conf
+ 4353  supervisorctl restart celery:celery_00
+ 4354  tail -f /var/log/iotwhynot/celery.err.log
+ 4355  ps aux | grep celery
+ 4356  kill 12656
+ 4357  ps aux | grep celery
+ 4358  kill 12656
+ 4359  ps aux | grep celery
+ 4360  tail -f /var/log/iotwhynot/celery.err.log
+ 4361  supervisorctl restart celery:celery_00
+ 4362  ps aux | grep celery
+ 4363  tail -f /var/log/iotwhynot/celery.err.log
+ 4364  pipenv shell
+ 4365  celery -A iteslateq -l info worker
+ 4366* ls -al
+ 4367* tail -f /var/log/supervisor/uwsgi.err.log
+ 4368* tail -f /var/log/supervisor/supervisord.log
+ 4369* supervisorctl
+ 4370* tail -f /var/log/supervisor/supervisord.log
+ 4371* supervisorctl
+ 4372* tail -f /var/log/supervisor/supervisord.log
+ 4373* tail -f /var/log/iotwhynot/celery.err.log
+ 4374* ps aux | grep celery | grep worker
+ 4375* tail -f /var/log/iotwhynot/celery.err.log
+ 4376* tail -f /var/log/nginx/api_access.log
+ 4377* curl -X POST http://localhost/chip_manager/sensor_data?code=738918762&version=1.2&format=json&id=0&interchange_count=81&is_first_interchange=0
+ 4378* curl -X POST "http://localhost/chip_manager/sensor_data?code=738918762&version=1.2&format=json&id=0&interchange_count=81&is_first_interchange=0"
+ 4379* curl -X POST http://localhost/chip_manager/sensor_data?code=738918762&version=1.2&format=json&id=0&interchange_count=81&is_first_interchange=1
+ 4380* curl -X POST http://localhost/chip_manager/sensor_data?code=738918762&version=1.2&format=json&id=0&interchange_count=81&is_first_interchange=1"
+ 4381* curl -X POST "http://localhost/chip_manager/sensor_data?code=738918762&version=1.2&format=json&id=0&interchange_count=81&is_first_interchange=1"
+ 4382* tail -f /var/log/nginx/api_access.log
+ 4383* tail -f /var/log/nginx/error.log
+ 4384* ls /app/iteslateq-platform/uwsgi_api.sock
+ 4385* chmod 777 /app/iteslateq-platform/uwsgi_api.sock
+ 4386* tail -f /var/log/nginx/error.log
+ 4387* ls -al /app/iteslateq-platform/uwsgi_api.sock
+ 4388* rm /app/iteslateq-platform/uwsgi_api.sock
+ 4389* ls -al /app/iteslateq-platform/uwsgi_api.sock
+ 4390* supervisorctl
+ 4391* cd /app/iteslateq-platform
+ 4392* ls
+ 4393* chmod +x deploy/scripts/start_uwsgi_api.sh
+ 4394* supervisorctl
+ 4395* tail -f /var/log/nginx/error.log
+ 4396* cd -
+ 4397* tail -f /var/log/nginx/api_access.log
+ 
+  4452  netstat -ltnpu
+ 4453  supervisorctl
+ 4454  ps aux | grep super
+ 4455  supervisorctl status
+ 4456  ps aux | grep celery
+ 4457  ps aux | grep wsgi
+ 4458  tail -f /var/log/nginx/error.log
+ 4459  supervisorctl
+ 4460  cd /app
+ 4461  ls
+ 4462  ps aux | grep web
+ 4463  cd iteslateq-platform
+ 4464  cd deploy/uwsgi
+ 4465  ls
+ 4466  cat uwsgi
+ 4467  cat uwsgi.ini
+ 4468  supervisorctl
+ 4469  ps aux
+ 4470  ps aux | grep super
+ 4471  kill 1184
+ 4472  ps aux | grep super
+ 4473  supervisorctl
+ 4474  supervisord
+ 4475  ps aux | grep super
+ 4476  supervisorctl
+ 4477  tail -f /var/log/nginx/error.log
+➜  ~  (THIS IS SERVER) 
+

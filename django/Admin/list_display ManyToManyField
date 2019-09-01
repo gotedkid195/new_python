@@ -1,0 +1,25 @@
+
+ERRORS:
+<class 'chip_manager.admin.AlarmStatusAdmin'>: (admin.E109) The value of 'list_display[2]' must not be a ManyToManyField.
+
+WARNINGS:
+chip_manager.AlarmStatus.user_receive_email: (fields.W340) null has no effect on ManyToManyField.
+
+class AlarmStatusAdmin(admin.ModelAdmin):
+    list_display = (
+        'config',
+        'is_alarm_status',
+        'get_user_receive_email',
+        'email_flags',
+        'time_is_over',
+        'maintain_time',
+        'number_send_email',
+        'period_send_email',
+        'allow_time',
+        'last_time_send_email')
+    list_filter = ('config__sensor__chip', 'config__sensor', 'config')
+
+    def get_user_receive_email(self, obj):
+        return "\n".join([p.user_receive_email for p in obj.user_receive_email.all()])  
+        
+// them ham def get_user_receive_email, nhung co khi xay khi add -> save

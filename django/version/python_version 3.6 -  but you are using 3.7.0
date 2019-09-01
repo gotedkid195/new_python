@@ -1,0 +1,2 @@
+pipenv install --dev
+pipenv install --python=3.7

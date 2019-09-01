@@ -1,0 +1,4 @@
+# view = ExportExcelView()
+# wb = view.xxxx(station, start_date, end_date)
+# with open('/tmp/abc.excel', 'w') as f:
+#     wb.save(f)

@@ -1,0 +1,17 @@
+This system supports the C.UTF-8 locale which is recommended.
+You might be able to resolve your issue by exporting the
+following environment variables:
+
+    export LC_ALL=C.UTF-8
+    export LANG=C.UTF-8
+
+Click discovered that you exported a UTF-8 locale
+but the locale system could not pick up from it because
+it does not exist.  The exported locale is "en_US.UTF-8" but it
+is not supported
+
+chỉ cần chạy lệnh bên dưới, xong pipenv shell
+
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
+

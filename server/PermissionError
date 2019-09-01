@@ -1,0 +1,6 @@
+PermissionError: [Errno 13] Permission denied: '/var/log/django_debug.log'
+
+
+(iteslateq-platform)➜  ~ git:(master) ✗ sudo touch /var/log/django_debug.log 
+[sudo] password for nguyencanh: 
+(iteslateq-platform)➜  ~ git:(master) ✗ sudo chmod 777 /var/log/django_debug.log

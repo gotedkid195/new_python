@@ -1,0 +1,308 @@
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+222 packages can be updated.
+11 updates are security updates.
+
+
+*** System restart required ***
+Last login: Tue Aug 13 09:34:47 2019 from 1.54.178.165
+➜  ~  (THIS IS SERVER) cd /app/iteslateq-platform 
+➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) git pull
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (8/8), done.
+remote: Total 12 (delta 2), reused 10 (delta 2), pack-reused 0
+Unpacking objects: 100% (12/12), done.
+From github.com:squallcs12/iteslateq-platform
+   36353c3..6f27655  master     -> origin/master
+Updating 36353c3..6f27655
+Fast-forward
+ deploy/nginx/sites/www.conf  |  8 ++++++++
+ deploy/scripts/start_asgi.sh |  5 +++++
+ deploy/supervisor/asgi.ini   | 24 ++++++++++++++++++++++++
+ iteslateq/asgi.py            | 12 ++++++++++++
+ 4 files changed, 49 insertions(+)
+ create mode 100644 deploy/scripts/start_asgi.sh
+ create mode 100644 deploy/supervisor/asgi.ini
+ create mode 100644 iteslateq/asgi.py
+➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   celerybeat.pid
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) nginx -t
+nginx: [emerg] unknown "connection_upgrade" variable
+nginx: configuration file /etc/nginx/nginx.conf test failed
+➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) git pull
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 6 (delta 0), reused 4 (delta 0), pack-reused 0
+Unpacking objects: 100% (6/6), done.
+From github.com:squallcs12/iteslateq-platform
+   6f27655..dba3683  master     -> origin/master
+Updating 6f27655..dba3683
+Fast-forward
+ deploy/nginx/sites/www.conf | 6 ++++++
+ 1 file changed, 6 insertions(+)
+➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) cd /etc/supervisor        
+➜  supervisor  (THIS IS SERVER) ls
+conf.d  supervisord.conf
+➜  supervisor  (THIS IS SERVER) cd conf.d 
+➜  conf.d  (THIS IS SERVER) supervisorctl reread                                                         
+➜  conf.d  (THIS IS SERVER) ln -sn /app/iteslateq-platform/deploy/supervisor/asgi.ini asgi.conf      
+➜  conf.d  (THIS IS SERVER) supervisorctl      
+celery:celery_00                 RUNNING   pid 16275, uptime 1:19:38
+celery_beat                      RUNNING   pid 16276, uptime 1:19:38
+flower                           RUNNING   pid 16277, uptime 1:19:38
+uwsgi                            RUNNING   pid 16279, uptime 1:19:38
+uwsgi_api                        RUNNING   pid 16278, uptime 1:19:38
+supervisor> reread
+asgi: available
+supervisor> update
+asgi: added process group
+supervisor> status
+asgi:asgi0                       BACKOFF   command at '/app/iteslateq-platform/deploy/scripts/start_asgi.sh' is not executable
+asgi:asgi1                       BACKOFF   command at '/app/iteslateq-platform/deploy/scripts/start_asgi.sh' is not executable
+asgi:asgi2                       BACKOFF   command at '/app/iteslateq-platform/deploy/scripts/start_asgi.sh' is not executable
+asgi:asgi3                       BACKOFF   command at '/app/iteslateq-platform/deploy/scripts/start_asgi.sh' is not executable
+celery:celery_00                 RUNNING   pid 16275, uptime 1:19:44
+celery_beat                      RUNNING   pid 16276, uptime 1:19:44
+flower                           RUNNING   pid 16277, uptime 1:19:44
+uwsgi                            RUNNING   pid 16279, uptime 1:19:44
+uwsgi_api                        RUNNING   pid 16278, uptime 1:19:44
+supervisor> exit
+➜  conf.d  (THIS IS SERVER) chmod +x /app/iteslateq-platform/deploy/scripts/start_asgi.sh
+➜  conf.d  (THIS IS SERVER) supervisorctl                                                
+asgi:asgi0                       FATAL     command at '/app/iteslateq-platform/deploy/scripts/start_asgi.sh' is not executable
+asgi:asgi1                       FATAL     command at '/app/iteslateq-platform/deploy/scripts/start_asgi.sh' is not executable
+asgi:asgi2                       FATAL     command at '/app/iteslateq-platform/deploy/scripts/start_asgi.sh' is not executable
+asgi:asgi3                       FATAL     command at '/app/iteslateq-platform/deploy/scripts/start_asgi.sh' is not executable
+celery:celery_00                 RUNNING   pid 16275, uptime 1:19:55
+celery_beat                      RUNNING   pid 16276, uptime 1:19:55
+flower                           RUNNING   pid 16277, uptime 1:19:55
+uwsgi                            RUNNING   pid 16279, uptime 1:19:55
+uwsgi_api                        RUNNING   pid 16278, uptime 1:19:55
+supervisor> status
+asgi:asgi0                       FATAL     command at '/app/iteslateq-platform/deploy/scripts/start_asgi.sh' is not executable
+asgi:asgi1                       FATAL     command at '/app/iteslateq-platform/deploy/scripts/start_asgi.sh' is not executable
+asgi:asgi2                       FATAL     command at '/app/iteslateq-platform/deploy/scripts/start_asgi.sh' is not executable
+asgi:asgi3                       FATAL     command at '/app/iteslateq-platform/deploy/scripts/start_asgi.sh' is not executable
+celery:celery_00                 RUNNING   pid 16275, uptime 1:19:56
+celery_beat                      RUNNING   pid 16276, uptime 1:19:56
+flower                           RUNNING   pid 16277, uptime 1:19:56
+uwsgi                            RUNNING   pid 16279, uptime 1:19:56
+uwsgi_api                        RUNNING   pid 16278, uptime 1:19:56
+supervisor> restart asgi:asgi0
+asgi:asgi0: ERROR (not running)
+asgi:asgi0: started
+supervisor> status
+asgi:asgi0                       RUNNING   pid 9817, uptime 0:00:03
+asgi:asgi1                       FATAL     command at '/app/iteslateq-platform/deploy/scripts/start_asgi.sh' is not executable
+asgi:asgi2                       FATAL     command at '/app/iteslateq-platform/deploy/scripts/start_asgi.sh' is not executable
+asgi:asgi3                       FATAL     command at '/app/iteslateq-platform/deploy/scripts/start_asgi.sh' is not executable
+celery:celery_00                 RUNNING   pid 16275, uptime 1:20:05
+celery_beat                      RUNNING   pid 16276, uptime 1:20:05
+flower                           RUNNING   pid 16277, uptime 1:20:05
+uwsgi                            RUNNING   pid 16279, uptime 1:20:05
+uwsgi_api                        RUNNING   pid 16278, uptime 1:20:05
+supervisor> restart asgi:asgi1
+asgi:asgi1: ERROR (not running)
+asgi:asgi1: started
+supervisor> restart asgi:asgi2
+asgi:asgi2: ERROR (not running)
+asgi:asgi2: started
+supervisor> restart asgi:asgi3
+asgi:asgi3: ERROR (not running)
+asgi:asgi3: started
+supervisor> restart asgi:asgi4
+asgi:asgi4: ERROR (no such process)
+asgi:asgi4: ERROR (no such process)
+supervisor> status
+asgi:asgi0                       RUNNING   pid 9817, uptime 0:00:18
+asgi:asgi1                       RUNNING   pid 10085, uptime 0:00:11
+asgi:asgi2                       RUNNING   pid 10187, uptime 0:00:08
+asgi:asgi3                       RUNNING   pid 10279, uptime 0:00:05
+celery:celery_00                 RUNNING   pid 16275, uptime 1:20:20
+celery_beat                      RUNNING   pid 16276, uptime 1:20:20
+flower                           RUNNING   pid 16277, uptime 1:20:20
+uwsgi                            RUNNING   pid 16279, uptime 1:20:20
+uwsgi_api                        RUNNING   pid 16278, uptime 1:20:20
+supervisor> exit
+➜  conf.d  (THIS IS SERVER) service nginx restart
+➜  conf.d  (THIS IS SERVER) nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+➜  conf.d  (THIS IS SERVER) exit
+Connection to 27.0.15.134 closed.
+➜  iteslateq-platform git:(master) git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Last commands done (2 commands done):
+   pick 1be60de create qr code
+   pick 20e8b91 save imei and sn
+No commands remaining.
+You are currently editing a commit while rebasing branch 'qr-code' on '3f743e5'.
+  (use "git commit --amend" to amend the current commit)
+  (use "git rebase --continue" once you are satisfied with your changes)
+
+nothing to commit, working directory clean
+➜  iteslateq-platform git:(master) git log
+➜  iteslateq-platform git:(master) git show 6f27655cd6a11e00bcd16000610ec4541a6c58d7
+➜  iteslateq-platform git:(master) git show 6f27655cd6a11e00bcd16000610ec4541a6c58d7
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+*** System restart required ***
+Last login: Tue Aug 13 08:35:38 2019 from 1.54.178.165
+➜  ~  (THIS IS SERVER) cd /app/iteslateq-platform 
+➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) ls
+accounts                      docs          node_modules      uca-url.eps
+backup_chip_healthy_20190804  fabfile.py    Pipfile           uca-url.svg
+celery1.log                   frontend      Pipfile.lock      uwsgi_api.sock
+celerybeat.pid                guide         public            uwsgi.sock
+celerybeat-schedule           https         README.md         w1-1.log
+chip_manager                  iteslateq     requirements.txt  w1-2.log
+code_chip                     locale        run-node          w1-3.log
+common                        manage.py     setup.cfg         w1-4.log
+communicator                  manager       static            w1-5.log
+deploy                        media         staticfiles       w1-6.log
+docker-compose.yml            newrelic.ini  templates         w1.log
+➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) exit
+Connection to 27.0.15.134 closed.
+➜  iteslateq-platform git:(master) ✗ git diff
+➜  iteslateq-platform git:(master) ✗ 
+➜  iteslateq-platform git:(master) ✗ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Last commands done (2 commands done):
+   pick 1be60de create qr code
+   pick 20e8b91 save imei and sn
+No commands remaining.
+You are currently editing a commit while rebasing branch 'qr-code' on '3f743e5'.
+  (use "git commit --amend" to amend the current commit)
+  (use "git rebase --continue" once you are satisfied with your changes)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   deploy/supervisor/asgi.ini
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   deploy/nginx/sites/www.conf
+	modified:   deploy/supervisor/asgi.ini
+
+➜  iteslateq-platform git:(master) ✗ git diff
+➜  iteslateq-platform git:(master) ✗ pwd
+/home/nguyencanh/iteslateq-platform
+➜  iteslateq-platform git:(master) ✗ 
+➜  iteslateq-platform git:(master) ✗ 
+➜  iteslateq-platform git:(master) ✗ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Last commands done (2 commands done):
+   pick 1be60de create qr code
+   pick 20e8b91 save imei and sn
+No commands remaining.
+You are currently editing a commit while rebasing branch 'qr-code' on '3f743e5'.
+  (use "git commit --amend" to amend the current commit)
+  (use "git rebase --continue" once you are satisfied with your changes)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   deploy/scripts/start_asgi.sh
+	new file:   deploy/supervisor/asgi.ini
+	new file:   iteslateq/asgi.py
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   deploy/nginx/sites/www.conf
+	modified:   deploy/scripts/start_asgi.sh
+	modified:   deploy/supervisor/asgi.ini
+	modified:   iteslateq/asgi.py
+
+➜  iteslateq-platform git:(master) ✗ git diff
+➜  iteslateq-platform git:(master) ✗ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Last commands done (2 commands done):
+   pick 1be60de create qr code
+   pick 20e8b91 save imei and sn
+No commands remaining.
+You are currently editing a commit while rebasing branch 'qr-code' on '3f743e5'.
+  (use "git commit --amend" to amend the current commit)
+  (use "git rebase --continue" once you are satisfied with your changes)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   deploy/scripts/start_asgi.sh
+	new file:   deploy/supervisor/asgi.ini
+	new file:   iteslateq/asgi.py
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   deploy/nginx/sites/www.conf
+	modified:   deploy/scripts/start_asgi.sh
+	modified:   deploy/supervisor/asgi.ini
+	modified:   iteslateq/asgi.py
+
+➜  iteslateq-platform git:(master) ✗ git log
+➜  iteslateq-platform git:(master) ✗ git add .
+➜  iteslateq-platform git:(master) ✗ git cm -m "try to deploy asgi"
+Can't find node in PATH, trying to find a node binary on your system
+frontend/node_modules/run-node/run-node: line 36: /bin/rm: Argument list too long
+giCouldn't find the Node.js binary. Ensure you have Node.js installed. Open an issue on https://github.com/sindresorhus/run-node
+t pflake8...................................................................Failed
+hookid: flake8
+
+/usr/bin/python: No module named flake8
+
+Add trailing commas......................................................Passed
+u%                                                                              ➜  iteslateq-platform git:(master) ✗ pipenv shell
+Launching subshell in virtual environment…
+ . /home/nguyencanh/.local/share/virtualenvs/iteslateq-platform-pxz4rE4Y/bin/activate
+➜  iteslateq-platform git:(master) ✗  . /home/nguyencanh/.local/share/virtualenvs/iteslateq-platform-pxz4rE4Y/bin/activate
+(iteslateq-platform)➜  iteslateq-platform git:(master) ✗ git cm -m "try to deploy asgi"
+Can't find node in PATH, trying to find a node binary on your system
+frontend/node_modules/run-node/run-node: line 36: /bin/rm: Argument list too long
+Couldn't find the Node.js binary. Ensure you have Node.js installed. Open an issue on https://github.com/sindresorhus/run-node
+flake8...................................................................Passed
+Add trailing commas......................................................Passed
+Can't find node in PATH, trying to find a node binary on your system
+frontend/node_modules/run-node/run-node: line 36: /bin/rm: Argument list too long
+Couldn't find the Node.js binary. Ensure you have Node.js installed. Open an issue on https://github.com/sindresorhus/run-node
+Can't find node in PATH, trying to find a node binary on your system
+frontend/node_modules/run-node/run-node: line 36: /bin/rm: Argument list too long
+Couldn't find the Node.js binary. Ensure you have Node.js installed. Open an issue on https://github.com/sindresorhus/run-node
+Can't find node in PATH, trying to find a node binary on your system
+frontend/node_modules/run-node/run-node: line 36: /bin/rm: Argument list too long
+Couldn't find the Node.js binary. Ensure you have Node.js installed. Open an issue on https://github.com/sindresorhus/run-node
+[master 6f27655] try to deploy asgi
+ 4 files changed, 49 insertions(+)
+ create mode 100644 deploy/scripts/start_asgi.sh
+ create mode 100644 deploy/supervisor/asgi.ini
+ create mode 100644 iteslateq/asgi.py
+(iteslateq-platform)➜  iteslateq-platform git:(master) git push

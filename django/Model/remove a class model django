@@ -1,0 +1,13 @@
+
+(tutorial)nguyencanh@nguyencanh-Latitude-E6420:~/tutorial$ python manage.py dbshell
+psql (9.5.14)
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+teslateq=> DROP TABLE sim_cne;  // DROP TABLE YourApp_ClassModel;
+DROP TABLE
+
+
+(tutorial)nguyencanh@nguyencanh-Latitude-E6420:~/tutorial$ python manage.py  makemigrations sim
+No changes detected in app 'sim'
+(tutorial)nguyencanh@nguyencanh-Latitude-E6420:~/tutorial$ python manage.py migrate

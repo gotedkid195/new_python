@@ -1,0 +1,3 @@
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) sudo find / -name postgresql.conf
+/usr/lib/tmpfiles.d/postgresql.conf
+/etc/postgresql/10/main/postgresql.conf

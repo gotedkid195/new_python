@@ -1,0 +1,34 @@
+(iteslateq-platform) ➜  iteslateq-platform git:(master) psql --version
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = "en_US.UTF-8",
+	LC_ALL = "en_US.UTF-8",
+	LC_IDENTIFICATION = "vi_VN",
+	LC_TIME = "vi_VN",
+	LC_NUMERIC = "vi_VN",
+	LC_PAPER = "vi_VN",
+	LC_MEASUREMENT = "vi_VN",
+	LC_ADDRESS = "vi_VN",
+	LC_MONETARY = "vi_VN",
+	LC_NAME = "vi_VN",
+	LC_TELEPHONE = "vi_VN",
+	LC_CTYPE = "en_US.UTF-8",
+	LC_TYPE = "en_US.UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+psql (PostgreSQL) 10.6 (Ubuntu 10.6-0ubuntu0.18.04.1)
+
+Cach khac phuc:
+
+(iteslateq-platform) ➜  ~ echo "LC_ALL=en_US.UTF-8" >> /etc/environment
+(iteslateq-platform) ➜  ~ echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+(iteslateq-platform) ➜  ~ echo "LANG=en_US.UTF-8" > /etc/locale.conf
+(iteslateq-platform) ➜  ~ locale-gen en_US.UTF-8
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+Generating locales (this might take a while)...
+  en_US.UTF-8... done
+Generation complete.
+(iteslateq-platform) ➜  ~ psql --version                               
+psql (PostgreSQL) 10.6 (Ubuntu 10.6-0ubuntu0.18.04.1)

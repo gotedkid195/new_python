@@ -1,0 +1,12 @@
+Get all object attributes in Python
+
+class MyObj(object):
+  def __init__(self):
+    self.name = 'Chuck Norris'
+    self.phone = '+6661'
+
+obj = MyObj()
+print(obj.__dict__)
+
+# Output:  
+# {'phone': '+6661', 'name': 'Chuck Norris'}

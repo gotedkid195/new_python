@@ -1,0 +1,46 @@
+➜  iteslateq-platform git:(master)  (THIS IS SERVER) git push
+ERROR: The key you are authenticating with has been marked as read only.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+➜  iteslateq-platform git:(master)  (THIS IS SERVER) ssh-keygen -t rsa -b 4096 -C "xxxxxxxx95@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): 
+/root/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /root/.ssh/id_rsa.
+Your public key has been saved in /root/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:8yJkUGD5cd9fsffLEzh2ujQTVfw3teMA nxxxxxxxx@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|    oo.  .+=+*+. |
+|   ....       * .|
+|    ..        .oo|
+|     ..  .O+=  =o|
+|      o      oo +|
+|     o   o. .  . |
+|      . . .      |
+|       . .       |
+|                 |
++----[SHA256]-----+
+➜  iteslateq-platform git:(master)  (THIS IS SERVER) eval "$(ssh-agent -s)"
+Agent pid 9545
+➜  iteslateq-platform git:(master)  (THIS IS SERVER) ssh-add ~/.ssh/id_rsa
+Identity added: /root/.ssh/id_rsa (/root/.ssh/id_rsa)
+➜  iteslateq-platform git:(master)  (THIS IS SERVER) cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NUq7YP5FdpG0JJ/UDJJ1rjOb/+Pxl0VoOPwfO0bvCuJgwZmBNEQpQ== xxxxxxxx@gmail.com
+➜  iteslateq-platform git:(master)  (THIS IS SERVER) git push
+Counting objects: 25, done.
+Delta compression using up to 6 threads.
+Compressing objects: 100% (24/24), done.
+Writing objects: 100% (25/25), 9.47 MiB | 552.00 KiB/s, done.
+Total 25 (delta 15), reused 0 (delta 0)
+remote: Resolving deltas: 100% (15/15), completed with 14 local objects.
+To github.com:squallcs12/iteslateq-platform.git
+   ec7409e..cd31688  master -> master
+➜  iteslateq-platform git:(master)  (THIS IS SERVER) 

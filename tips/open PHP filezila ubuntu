@@ -1,0 +1,7 @@
+
+$ which subl
+/snap/bin/sub
+
+Open app filezila -> edit -> setting -> File Editing 
+
+Pass dong nay vao -> php  /snap/bin/subl

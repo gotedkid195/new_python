@@ -1,0 +1,27 @@
+(iteslateq-platform)➜  iteslateq-platform git:(unittest-ajax-connect-detail) python manage.py test
+/home/nguyencanh/.local/share/virtualenvs/iteslateq-platform-pxz4rE4Y/lib/python3.7/site-packages/environ/environ.py:639: UserWarning: Error reading .env_test - if you're not configuring your environment separately, check this.
+  "environment separately, check this." % env_file)
+Creating test database for alias 'default'...
+Got an error creating the test database: database "test_teslateq" already exists
+
+Type 'yes' if you would like to try deleting the test database 'test_teslateq', or 'no' to cancel: no
+Tests cancelled.
+
+➜  ~ git:(master) ✗ sudo su - postgres
+[sudo] password for nguyencanh: 
+postgres@canhnguyen:~$ psql
+psql (9.5.14)
+Type "help" for help.
+
+postgres=# DROP DATABASE test_teslateq ;
+DROP DATABASE
+postgres=# 
+
+
+Ran 20 tests in 1.697s
+
+OK
+
+
+
+Lỗĩ này do, khi chạy test nó bị lỗi hay đứng gì đó nên chưa xóa database test đc. Nên báo database đã tồn tại

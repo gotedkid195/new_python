@@ -1,0 +1,17 @@
+
+(tutorial)nguyencanh@nguyencanh-Latitude-E6420:~/tutorial$ python manage.py test
+Creating test database for alias 'default'...
+Got an error creating the test database: permission denied to create database
+
+
+
+nguyencanh@nguyencanh-Latitude-E6420:~$ sudo su postgres
+[sudo] password for nguyencanh: 
+postgres@nguyencanh-Latitude-E6420:/home/nguyencanh$ psql
+psql (9.5.14)
+Type "help" for help.
+
+postgres=# ALTER USER teslateq CREATEDB;
+ALTER ROLE
+postgres=# \l
+postgres=# \du

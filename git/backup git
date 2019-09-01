@@ -1,0 +1,8 @@
+(iteslateq-platform)nguyencanh@nguyencanh-Latitude-E6420:~/iteslateq-platform$ history | grep stash
+ 2002  git stash log
+ 2003  git stash list
+ 2004  git stash pop
+ 2006  git stash pop
+ 2008  git stash list
+ 2009  git stash pop
+ 2011  history | grep stash

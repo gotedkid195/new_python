@@ -1,0 +1,9 @@
+
+chmod 777 /webapps/hello_django/bin/gunicorn_start.bash 
+
+$ sudo supervisorctl restart hello 
+hello: stopped
+hello: started
+
+$ sudo supervisorctl status hello                       
+hello                            RUNNING    pid 18020, uptime 0:00:50

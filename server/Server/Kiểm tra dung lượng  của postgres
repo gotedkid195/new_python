@@ -1,0 +1,55 @@
+➜  iteslateq-platform git:(mater) ✗ sudo su - postgres 
+[sudo] password for nguyencanh: 
+postgres@canh-nguyen:~$ psql
+psql (9.5.17)
+Type "help" for help.
+
+Để xác định kích thước của cơ sở dữ liệu, hãy gõ lệnh sau. 
+Thay thế dbname bằng tên của cơ sở dữ liệu mà bạn muốn kiểm tra:
+SELECT pg_size_pretty( pg_database_size('dbname') );
+
+postgres=# SELECT pg_size_pretty( pg_database_size('teslateq') );
+ pg_size_pretty 
+----------------
+ 11 MB            => 11 MB là size của database
+(1 row)
+                                                ^
+postgres=# \d+
+
+                                      List of relations
+ Schema |               Name                |   Type   |  Owner   |    Size    | Description 
+--------+-----------------------------------+----------+----------+------------+-------------
+ public | accounts_userprofile              | table    | postgres | 8192 bytes | 
+ public | accounts_userprofile_id_seq       | sequence | postgres | 8192 bytes | 
+ public | auth_group                        | table    | postgres | 0 bytes    | 
+ public | auth_group_id_seq                 | sequence | postgres | 8192 bytes | 
+ public | auth_group_permissions            | table    | postgres | 0 bytes    | 
+ public | auth_group_permissions_id_seq     | sequence | postgres | 8192 bytes | 
+ public | auth_permission                   | table    | postgres | 8192 bytes | 
+ public | auth_permission_id_seq            | sequence | postgres | 8192 bytes | 
+ public | auth_user                         | table    | postgres | 16 kB      | 
+ public | auth_user_groups                  | table    | postgres | 0 bytes    | 
+ public | auth_user_groups_id_seq           | sequence | postgres | 8192 bytes | 
+ public | auth_user_id_seq                  | sequence | postgres | 8192 bytes | 
+ public | auth_user_user_permissions        | table    | postgres | 0 bytes    | 
+ public | auth_user_user_permissions_id_seq | sequence | postgres | 8192 bytes | 
+ public | django_admin_log                  | table    | postgres | 8192 bytes | 
+ public | django_admin_log_id_seq           | sequence | postgres | 8192 bytes | 
+ public | django_content_type               | table    | postgres | 8192 bytes | 
+ public | django_content_type_id_seq        | sequence | postgres | 8192 bytes | 
+ public | django_migrations                 | table    | postgres | 16 kB      | 
+ public | django_migrations_id_seq          | sequence | postgres | 8192 bytes | 
+ public | django_session                    | table    | postgres | 8192 bytes | 
+(21 rows)
+
+Để xác định kích thước của bảng trong cơ sở dữ liệu hiện tại, hãy nhập lệnh sau. 
+Thay thế tablename bằng tên của bảng mà bạn muốn kiểm tra.
+SELECT pg_size_pretty( pg_total_relation_size('tablename') );
+
+postgres=# SELECT pg_size_pretty( pg_total_relation_size('django_migrations') );
+ pg_size_pretty 
+----------------
+ 32 kB
+(1 row)
+
+

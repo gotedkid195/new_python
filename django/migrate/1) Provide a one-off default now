@@ -1,0 +1,21 @@
+(iteslateq-platform)➜  iteslateq-platform git:(feature-form) ✗ python manage.py makemigrations
+You are trying to add a non-nullable field 'detail' to smellform without a default; we can't do that (the database needs something to populate existing rows).
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit, and let me add a default in models.py
+Select an option: 1
+Please enter the default value now, as valid Python
+The datetime and django.utils.timezone modules are available, so you can do e.g. timezone.now
+Type 'exit' to exit this prompt
+>>> ''
+Migrations for 'manager':
+  manager/migrations/0027_auto_20190502_1050.py
+    - Remove field name from smellform
+    - Remove field title from smellform
+    - Add field detail to smellform
+    - Alter field name on detailform
+(iteslateq-platform)➜  iteslateq-platform git:(feature-form) ✗ python manage.py migrate       
+Operations to perform:
+  Apply all migrations: accounts, admin, auth, authtoken, chip_manager, code_chip, contenttypes, guardian, manager, otp_static, otp_totp, sessions, sites, two_factor
+Running migrations:
+  Applying manager.0027_auto_20190502_1050... OK

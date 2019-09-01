@@ -1,0 +1,10 @@
+-        $('#bnt-contact').click(function() {
+-            $('#station_contact').on('shown.bs.collapse', function () {
+-               $('#collapseExample').collapse('hide')
+-            });
+-        });
+-        $('#bnt-alarm').click(function() {
+-            $('#collapseExample').on('shown.bs.collapse', function () {
+-               $('#station_contact').collapse('hide')
+-            });
+-        });

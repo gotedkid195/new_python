@@ -1,0 +1,14 @@
+(iteslateq-platform) root@iteslateq:/app/iteslateq-platform# supervisorctl stop all
+celery:celery_07: stopped
+uwsgi: stopped
+celery:celery_02: stopped
+celery:celery_01: stopped
+celery:celery_04: stopped
+celery:celery_05: stopped
+celery:celery_06: stopped
+celery:celery_00: stopped
+celery:celery_03: stopped
+
+
+tắt bằng cách xài ps aux | grep supervisor -> tắt tất cả process
+sau đó chạy lại supervisord là ok

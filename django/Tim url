@@ -1,0 +1,12 @@
+Tim url 
+python manage.py show_urls | grep two_factor
+
+/account/login/	two_factor.views.core.LoginView	two_factor:login
+/account/two-factor-confirm/	accounts.views.two_factor_confirm.TwoFactorConfirmView	accounts:two-factor-confirm
+/account/two_factor/	two_factor.views.profile.ProfileView	two_factor:profile
+/account/two_factor/backup/phone/register/	two_factor.views.core.PhoneSetupView	two_factor:phone_create
+
+Ctril + N -> De tim dua theo Classname  "ProfileView"	
+
+template_name = 'two_factor/profile/profile.html' -> tim file html , copy two_factor/profile/profile.html pass thu muc template cua minh , 
+copy all code profile.html sang templare minh moi tao 

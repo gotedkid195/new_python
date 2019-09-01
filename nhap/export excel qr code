@@ -1,0 +1,50 @@
+
+    template_name = 'code_chip/qr_code.html'
+    form_class = QRCodeForm
+    success_url = reverse_lazy('code_chip:create_code')
+
+    def data(self, ws, style, imei, sn, qr_code):
+        col = 0
+        row = 0
+        title = ['IMEI', 'S/N', 'QR Code']
+        data = [imei, sn, qr_code]
+        for i in range(len(title)):
+            ws.write(row, col, title[i], style)
+            ws.col(col).width = 250*20
+            col += 1
+        row += 1
+        col = 0
+        for i in range(len(data)):
+            ws.write(row, col, data[i], style)
+            ws.col(col).width = 250*20
+            col += 1
+
+    def form_valid(self, form):
+        imei = form.cleaned_data['imei']
+        sn = form.cleaned_data['sn']
+        form.save()
+        response = HttpResponse(content_type='application/ms-excel')
+        filename = f"attachment; filename='abc.xls'"
+        response['Content-Disposition'] = filename
+        wb = xlwt.Workbook(encoding='utf-8')
+        ws = wb.add_sheet('ghfh')
+        style = xlwt.XFStyle()
+        font = xlwt.Font()
+        font.name = 'Arial'
+        style.font = font
+        alignment = xlwt.Alignment()
+        alignment.horz = xlwt.Alignment.HORZ_CENTER
+        alignment.vert = xlwt.Alignment.VERT_CENTER
+        style.alignment = alignment
+        url = 'https://iotwhynot.com/code_chip/?imei=' + str(imei) + '&sn=' + str(sn)
+        qr_code = qr_from_text(url)
+        self.data(ws, style, imei, sn, qr_code)
+        wb.save(response)
+        return response
+
+    def get_context_data(self, **kwargs):
+        context = super(QRCodeView, self).get_context_data(**kwargs)
+        org = self.request.user.org
+        context['order_stations'] = org.stations.order_by('pk')
+        context['org'] = org
+        return context

@@ -1,0 +1,1 @@
+$ python manage.py behave features/super_user_go_to_page_account.feature

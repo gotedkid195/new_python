@@ -1,0 +1,9 @@
+(iteslateq-platform) ➜  ~ sudo apt-get --purge remove postgresql
+
+Kiem tra cac package cua postgresql
+(iteslateq-platform) ➜  ~ dpkg -l | grep postgresql   
+ii  postgresql-client-10                  10.6-0ubuntu0.18.04.1             amd64        front-end programs for PostgreSQL 10
+ii  postgresql-client-common              190                               all          manager for multiple PostgreSQL client versions
+
+Xoa tiep cac package
+(iteslateq-platform) ➜  ~ sudo apt-get --purge remove postgresql-client-10 postgresql-client-common

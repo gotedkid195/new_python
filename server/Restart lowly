@@ -1,0 +1,3 @@
+ps aux | grep super
+Nó sẽ in ra những cái supervisor process
+Tùy thuộc vào đó mà kill rồi restart lai

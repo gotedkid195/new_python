@@ -1,0 +1,38 @@
+➜  ~  (THIS IS SERVER) df -h --total
+Filesystem      Size  Used Avail Use% Mounted on
+udev            2.9G     0  2.9G   0% /dev
+tmpfs           596M  1.5M  595M   1% /run
+/dev/sda4       116G  110G  236M 100% /
+tmpfs           3.0G  8.0K  3.0G   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           3.0G     0  3.0G   0% /sys/fs/cgroup
+/dev/loop1       89M   89M     0 100% /snap/core/7169
+/dev/loop0       89M   89M     0 100% /snap/core/6964
+/dev/sda2       477M  142M  306M  32% /boot
+tmpfs           596M     0  596M   0% /run/user/0
+total           127G  110G   11G  92% -              => Đã sữ dụng hết 110G, đẫy sẽ làm database không cho kết nốí.
+➜  ~  (THIS IS SERVER) 
+
+https://www.hostinger.vn/huong-dan/lam-the-nao-de-kiem-tra-dung-luong-duoc-dung-trong-linux/
+
+Command đầu tiên bạn học là df. Command này có nghĩa là disk filesystem. 
+Nó sẽ hiển thị dung lượng đĩa của hệ thống còn trống và được sử dụng bao nhiêu trong máy Linux. 
+Khi thực thi command này, bạn sẽ nhìn thấy một số cột như:
+
+FileSystem – tên của file system
+Size – dung lượng tổng của một filesystem
+Used – Cho biết đĩa đã sử dụng bao nhiêu dung lượng trong một file system.
+Available – Cho biết đĩa còn trống bao nhiêu dung lượng trong một file system.
+Use% – Cho biết tỉ lệ phần trăm dung lượng đã được dùng..
+Mounted On – Cột cuối cùng cho biết file system mount vào đâu.
+
+Có thể có nhiều cột hơn với những tùy chọn được thực hiện trong lệnh này.
+
+Chúng tôi khuyên dùng command này với tùy chọn như bên dưới:
+
+df -h – Nó sẽ hiển thị tốt và dễ đọc hơn với dạng có thể đọc được, bằng cách dùng tùy chọn này, dung lượng đĩa sẽ được hiển thị dưới dạng GB (trừ khi nó ít hơn 1 GB, nó sẽ hiển thị MB hoặc B).
+df -m – Có thể được dùng để hiện thị thông tin dung lượng bằng MB.
+df -k – Có thể được dùng để hiện thị thông tin dung lượng bằng KB.
+df -T – Tuy chọn này sẽ cho bạn biết loại của file system type (cột mới sẽ hiện lên).
+df -ht /home – Bằng tùy chọn này, bạn sẽ biết thông tin của một file system được chỉ định (với dạng đọc được của con người).
+df –help – Sẽ hiển thị tất cả thông tin hữu ích khác mà có thể giúp bạn sử dụng với command này

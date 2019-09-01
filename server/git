@@ -1,0 +1,3 @@
+xóa thay đổi của 1 file nào đó
+
+git co HEAD -- chip_manager/models/config.py

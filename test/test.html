@@ -1,0 +1,22 @@
+Nháp:
+em đã có mãng a = [[1,2,3],[4,5,6]]
+for index1 in range(a.0)  // índex1 = 0,1,2
+  for index2 in range(a)   // index2 = 0,1
+     a[index2,index1]       // a[0,0]=1  a[1,0]=4
+     
+giờ em đang bí chổ range for , ap qua bên html nó không hiểu
+
+{{ test }}  // test =  [[1,2,3],[4,5,6]]
+<table>
+{% for index1 in range(0,test.0|length) %} 
+<tr>
+    {% for index2 in range(0,test|length) %}
+
+      <td>{{ test.index2.index1  }}</td>
+
+    {% endfor %}
+</tr>
+{% endfor %}
+</table>
+
+Error: django.template.exceptions.TemplateSyntaxError: Could not parse some characters: range|(0,test.0||length)

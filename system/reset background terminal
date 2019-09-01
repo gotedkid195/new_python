@@ -1,0 +1,7 @@
+Neu chua cai dconf thi chay lenh
+
+sudo apt-get install dconf-cli
+
+This simple command works in Ubuntu 16.04.
+
+dconf reset -f /org/gnome/terminal/legacy/profiles:/

@@ -1,0 +1,33 @@
+B1:Edit setting.py c
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+
+    'accounts',
+]
+
+AUTH_USER_MODEL = 'accounts.User'
+
+
+
+B2: Edit accouns/models.py
+
+from django.contrib.auth.models import AbstractUser
+class User(AbstractUser):
+    pass
+ 
+B3: $ python manage.py makemigrations
+
+Migrations for 'accounts':
+  accounts/migrations/0001_initial.py
+    - Create model User
+    
+B4: $ python manage.py migrate
+
+ 
+    

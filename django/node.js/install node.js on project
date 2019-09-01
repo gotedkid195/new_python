@@ -1,0 +1,14 @@
+https://nodejs.org/download/release/v9.10.0/
+chon version -> dowload node-v9.10.0-linux-x64.tar.gz 
+
+extral file vao thu muc node-v9.10.0-linux-x64/bin copy path sang folder project frontend
+nguyencanh@nguyencanh-Latitude-E6420:~/iteslateq-platform/frontend$ export PATH="/home/nguyencanh/Documents/node-v9.10.0-linux-x64/bin:$PATH"
+nguyencanh@nguyencanh-Latitude-E6420:~/iteslateq-platform/frontend$ npm i && npm run build
+
+
+nguyencanh@nguyencanh-Latitude-E6420:~/iteslateq-platform/frontend$ cd 
+nguyencanh@nguyencanh-Latitude-E6420:~/ nano .bashrc
+them doan nay export PATH="/home/nguyencanh/Documents/node-v9.10.0-linux-x64/bin:$PATH" 
+vao cuoi file .bashrc .de sau này sẽ k cần export lại nữa
+
+mỗi khi npm run build xong thì python manage.py collectstatic lại ,và xóa cake trình duyet (ẩn danh)

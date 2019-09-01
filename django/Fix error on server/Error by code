@@ -1,0 +1,89 @@
+ 4687  htop
+ 4688  supervisorctl
+ 4689  status
+ 4690  htop
+ 4691  git status
+ 4692  python manage.py migrate
+ 4693  pipenv shell
+ 4694  python manage.py migrate
+ 4695  cat chip_manager/migrations/0140_auto_20190729_1548.py
+ 4696  vim /etc/postgresql/10/main/postgresql.conf
+ 4697  service postgresql restart
+ 4698  cat chip_manager/migrations/0140_auto_20190729_1548.py
+ 4699  python manage.py migrate
+ 4700  cat chip_manager/migrations/0140_auto_20190729_1548.py
+ 4701  django dbshell
+ 4702  python manage.py dbshell
+ 4703  supervisorctl
+ 4704  python manage.py dbshell
+ 4705  dh -f
+ 4706  df -h
+ 4707  cat .env_custom
+ 4708  pg_dump --host localhost --port 5432 --username teslateq --format plain --ignore-version --verbose --file "backup_chip_healthy_20190804" --table public.chip_manager_healthy teslateq\n
+ 4709  pg_dump --host localhost --port 5432 --username teslateq --format plain --verbose --file "backup_chip_healthy_20190804" --table public.chip_manager_healthy teslateq\n
+ 4710  ls -al
+ 4711  python manage.py dbshell
+ 4712  python manage.py migrate
+ 4713  vim /etc/postgresql/10/main/postgresql.conf
+ 4714  service postgresql restart
+ 4715  python3 --version\n
+ 4716  cd iteslateq-platform
+ 4717  cd /app/iteslateq-platform
+ 4718  pipenv shell
+ 4719  pipenv install
+ 4720  git pull
+ 4721  python manage.py migrate
+ 4722  cd /app/iteslateq-platform
+ 4723  pipenv install unidecode
+ 4724  supervisorctl
+ 4725  tail -f /var/log/iotwhynot/celery.err.log 
+ 4726  supervisorctl
+ 4727  tail -f /var/log/iotwhynot/celery.err.log 
+ 4728  cd /app/iteslateq-platform
+ 4729  pipenv install packaging
+ 4730  supervisorctl restart all
+ 4731  tail -f /var/log/iotwhynot/celery.err.log 
+ 4732  python manage.py
+ 4733  pipenv shell
+ 4734  python manage.py
+ 4735  tail -f /var/log/iotwhynot/celery.err.log 
+ 4736  cat deploy/uwsgi/uwsgi.ini
+ 4737  cat deploy/uwsgi/uwsgi_api.ini
+ 4738  vim .env_custom
+ 4739  supervisorctl restart uwsgi
+ 4740  ls
+ 4741  cat templates/500.html
+ 4742  echo $DEBUG
+ 4743  ls
+ 4744  cat .env_custom
+ 4745  cat iteslateq/settings.py
+ 4746  vim iteslateq/settings.py
+ 4747  supervisorctl restart uwsgi
+ 4748  django shell
+ 4749  python manage.py shell
+ 4750  vim iteslateq/settings.py
+ 4751  vim .env_custom
+ 4752  supervisorctl restart uwsgi
+ 4753  python manage.py migrate
+ 4754  python manage.py makemigrations --merge
+ 4755  python manage.py migrate
+ 4756  supervisorctl restart all
+ 4757  tail -f /var/log/iotwhynot/celery.err.log 
+ 4758  tail -f /var/log/nginx/web_access.log
+ 4759  tail -f /var/log/nginx/access.log
+ 4760  tail -f /var/log/nginx/api_access.log
+ 4761  python manage.py test
+ 4762  vim deploy/uwsgi/uwsgi_api.ini
+ 4763  mkdir /var/log/uwsgi
+ 4764  chmod 777 /var/log/uwsgi
+ 4765  supervisorctl
+ 4766  tail /var/log/uwsgi/api.log
+ 4767  vim chip_manager/views/sensor_data_api.py
+ 4768  supervisorctl restart all
+ 4769  vim chip_manager/views/sensor_data_api.py
+ 4770  supervisorctl restart all
+ 4771  tail /var/log/uwsgi/api.log
+ 4772  tail -f /var/log/nginx/api_access.log
+ 4773  tail -f /var/log/iotwhynot/celery.err.log 
+ 4774  exit
+➜  ~  (THIS IS SERVER) 

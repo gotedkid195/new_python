@@ -1,0 +1,12 @@
+https://stackoverflow.com/questions/2673385/how-to-generate-random-number-with-the-specific-length-in-python?fbclid=IwAR3dVoo4PugOw21jRx9pdQeiTJpT_y4hEuFz9hXrF2DYuIvwHQ4DnmIpou8
+
+import random
+num = random.randrange(1, 10**3)
+# using format
+num_with_zeros = '{:03}'.format(num)
+# using string's zfill
+num_with_zeros = str(num).zfill(3)
+
+'026'
+'255'
+'512'

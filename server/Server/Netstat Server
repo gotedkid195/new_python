@@ -1,0 +1,91 @@
+https://tailieu.123host.vn/kb/vps/huong-dan-dung-lenh-netstat-de-quan-ly-mang-tren-centos-6.html
+https://kienthuclinux.com/cach-tim-ra-port-cua-tien-trinh-dang-lang-nghe/
+
+Netstat (network statistics) là một công cụ dòng lệnh để theo dõi các kết nối mạng vào và ra 
+có sẵn trên tất cả các hệ điều hành dựa trên Unix và cũng có sẵn trên hệ điều hành Windows.
+l Chỉ hiện thỉ các socket đang lắng nghe.
+
+$ netstat -lt        #Liệt kê tất cả các cổng TCP đang lắng nghe
+
+$ netstat -ltnp | grep -w 80
+
+t Hiển thị các kết nối TCP.
+n Hiển thị số địa chỉ.
+p Kích hoạt hiển thị ID tiến trình và tên tiến trình.
+grep -w Hiển thị khớp chính xác với từ khóa
+
+
+➜  ~  (THIS IS SERVER) netstat -ltnpu
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      17382/nginx: master 
+tcp        0      0 0.0.0.0:5555            0.0.0.0:*               LISTEN      17974/python3.7     
+tcp        0      0 127.0.0.53:53           0.0.0.0:*               LISTEN      981/systemd-resolve 
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1513/sshd           
+tcp        0      0 127.0.0.1:5432          0.0.0.0:*               LISTEN      1570/postgres       
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN      17382/nginx: master 
+tcp        0      0 127.0.0.1:6379          0.0.0.0:*               LISTEN      1431/redis-server 1 
+tcp6       0      0 :::5555                 :::*                    LISTEN      17974/python3.7     
+tcp6       0      0 :::22                   :::*                    LISTEN      1513/sshd           
+tcp6       0      0 ::1:5432                :::*                    LISTEN      1570/postgres       
+tcp6       0      0 ::1:6379                :::*                    LISTEN      1431/redis-server 1 
+udp        0      0 127.0.0.53:53           0.0.0.0:*                           981/systemd-resolve 
+
+➜  ~  (THIS IS SERVER) supervisorctl
+
+celery:celery_00                 RUNNING   pid 17972, uptime 1:08:31
+celery_beat                      RUNNING   pid 17973, uptime 1:08:31
+flower                           RUNNING   pid 17974, uptime 1:08:31
+uwsgi                            RUNNING   pid 17976, uptime 1:08:31
+uwsgi_api                        RUNNING   pid 17975, uptime 1:08:31
+supervisor> 
+
+
+https://blog.thom.shop/supervisor-la-gi-cai-dat-va-su-dung-supervisor/
+https://serversforhackers.com/c/monitoring-processes-with-supervisord
+
+Supervisor là một công cụ giúp quản lý các process chạy trên Linux. Một số trường hợp dùng Supervisor như:
+
+Run something as a permanent process. Đảm bảo một process nào đó luôn luôn chạy, chạy hoài, chạy mãi. Nếu vì lý do gì mà nó bị tắt, thì Supervisor sẽ khởi động process đó lại
+Tự động chạy một process khi khởi động hệ thống
+Quản lý nhiều process dưới dạng một group các process, có thể được bật/tắt cùng lúc
+
+$ cd /etc/supervisor/conf.d/
+
+[program:uwsgi]
+command=/app/iteslateq-platform/deploy/scripts/start_uwsgi.sh
+directory=/app/iteslateq-platform
+startretries=5
+autostart=true
+autorestart=true
+stdout_events_enabled=true
+stderr_events_enabled=true
+stdout_logfile=/dev/null
+stdout_logfile_maxbytes=0
+stderr_logfile=/dev/null
+stderr_logfile_maxbytes=0
+stopsignal=QUIT
+
+
+[program: tên bất kì] là tên(thích gì đặt đó) cho program
+command là path tới program cần chạy, ví dụ trên là /root/sendmail.sh
+autostart quy định process có tự chạy ngay khi Supervisor được khởi động hay ko. Thường thì Supervisor được chạy khi boot, nên điều này đồng nghĩa với việc quy định process có tự chạy khi boot hay ko.
+autorestart quy định process có tự khởi động ngay sau khi nó bị tắt vì lý do nào đó(đã chạy xong, bị lỗi, bị timeout…) hay ko.
+user là user dùng để thực thi process
+numprocs là số lượng tiến trình của cùng process đó (instances). Ví dụ để gửi mail nhanh hơn thì có thể cho numprocs=4, nghĩa là 4 process cùng chạy task gửi mail.
+redirect_stderr nếu set = true thì stderr sẽ bị redirect để xuất vào file chỉ định ở stdout_logfile
+stdout_logfile: mọi thứ mà-đáng-lẽ-xuất-ra-màn-hình lúc process được thực thi sẽ xuất vào đây. Ví dụ một process là bash script có lệnh echo gì ấy, thì thay vì echo ra màn hình, nó sẽ đc xuất vào file này. 
+Bao gồm cả stderr nếu redirect_stderr phía trên set=true.
+
+VD: stderr_logfile=/var/log/webhook/nodehook.err.log  Chung ta can phải tạo sudo mkdir /var/log/webhook trước.
+
+➜  ~  (THIS IS SERVER) ps aux | grep super
+root      4067  0.0  0.3  64792 21264 pts/4    S+   07:00   0:00 /usr/bin/python /usr/bin/supervisorctl
+root      4253  0.0  0.0  13136  1064 pts/2    S+   07:19   0:00 grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn super
+root     17963  2.9  0.2  56824 17560 ?        Ss   05:51   2:36 /usr/bin/python /usr/bin/supervisord
+
+➜  ~  (THIS IS SERVER) supervisord
+/usr/lib/python2.7/dist-packages/supervisor/options.py:298: UserWarning: Supervisord is running as root and it is searching for its configuration file in default locations (including its current working directory); you probably want to specify a "-c" argument specifying an absolute path to a configuration file for improved security.
+  'Supervisord is running as root and it is searching '
+Error: Another program is already listening on a port that one of our HTTP servers is configured to use.  Shut this program down first before starting supervisord.
+For help, use /usr/bin/supervisord -h

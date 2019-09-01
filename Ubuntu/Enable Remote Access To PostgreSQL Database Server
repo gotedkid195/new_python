@@ -1,0 +1,65 @@
+➜  ~ git:(master) ✗ psql -h 27.0.15.134 -U teslateq        # psql -h hostname -U username
+psql: could not connect to server: Connection refused
+	Is the server running on host "27.0.15.134" and accepting
+	TCP/IP connections on port 5432?
+
+
+➜  ~  (THIS IS SERVER) nano /etc/postgresql/10/main/postgresql.conf 
+
+#------------------------------------------------------------------------------
+# CONNECTIONS AND AUTHENTICATION
+#------------------------------------------------------------------------------
+
+# - Connection Settings -
+
+listen_addresses = '*'          # what IP address(es) to listen on;
+                                        # comma-separated list of addresses;
+                                        # defaults to 'localhost'; use '*' for $
+                                        # (change requires restart)
+port = 5432                             # (change requires restart)
+max_connections = 100                   # (change requires restart)
+#superuser_reserved_connections = 3     # (change requires restart)
+unix_socket_directories = '/var/run/postgresql' # comma-separated list of direc$
+                                        # (change requires restart)
+#unix_socket_group = ''                 # (change requires restart)
+#unix_socket_permissions = 0777         # begin with 0 to use octal notation
+
+# - Security and Authentication -
+
+#authentication_timeout = 1min          # 1s-600s
+ssl = on
+ssl_ciphers = 'HIGH:MEDIUM:+3DES:!aNULL' # allowed SSL ciphers
+ssl_prefer_server_ciphers = on
+#ssl_ecdh_curve = 'prime256v1'
+#ssl_dh_params_file = ''
+ssl_cert_file = '/etc/ssl/certs/ssl-cert-snakeoil.pem'
+ssl_key_file = '/etc/ssl/private/ssl-cert-snakeoil.key'
+#ssl_ca_file = ''
+#ssl_crl_file = ''
+#password_encryption = md5              # md5 or scram-sha-256
+#db_user_namespace = off
+
+➜  ~  (THIS IS SERVER) nano /etc/postgresql/10/main/pg_hba.conf    
+# IPv4 local connections:
+host    all             all             127.0.0.1/32            md5
+# IPv6 local connections:
+host    all             all             ::1/128                 md5
+# Allow replication connections from localhost, by a user with the
+# replication privilege.
+local   replication     all                                     peer
+host    replication     all             127.0.0.1/32            md5
+host    replication     all             ::1/128                 md5
+
+host    all             all             0.0.0.0/0               md5
+
+➜  ~ git:(master) ✗ psql -h 27.0.15.134 -U teslateq       
+Password for user teslateq: 
+psql (9.5.17, server 10.8 (Ubuntu 10.8-0ubuntu0.18.04.1))
+WARNING: psql major version 9.5, server major version 10.
+         Some psql features might not work.
+SSL connection (protocol: TLSv1.2, cipher: ECDHE-RSA-AES256-GCM-SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+teslateq=> \d
+teslateq=> \l
+=> DOne

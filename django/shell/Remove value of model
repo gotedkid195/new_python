@@ -1,0 +1,12 @@
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) python manage.py shell
+Python 3.7.0 (default, Feb 12 2019, 05:04:47) 
+[GCC 7.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from accounts.models import Org
+>>> Org.objects.get(pk=3)
+<Org: test-org-1 - 3>
+>>> a = Org.objects.get(pk=3)
+>>> a.delete()
+(2563491, {'accounts.Device': 0, 'chip_manager.Config_user_receive_email': 0, 'chip_manager.Value': 852835, 'chip_manager.Report': 0, 'chip_manager.ChipMessage': 0, 'chip_manager.ResetChip': 0, 'chip_manager.Healthy': 852820, 'chip_manager.CurrentValue': 852829, 'chip_manager.SavedConfig': 1000, 'chip_manager.Config': 1000, 'chip_manager.Sensor': 1001, 'chip_manager.Chip': 1001, 'manager.Station': 1004, 'accounts.Org': 1})
+

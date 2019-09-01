@@ -1,0 +1,3 @@
+$ locate postgresql.conf
+/usr/lib/tmpfiles.d/postgresql.conf
+/usr/share/postgresql/10/postgresql.conf.sample

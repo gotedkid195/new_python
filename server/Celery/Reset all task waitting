@@ -1,0 +1,8 @@
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) celery -A iteslateq purge         
+WARNING: This will remove all tasks from queue: celery.
+         There is no undo for this operation!
+
+(to skip this prompt use the -f option)
+
+Are you sure you want to delete all tasks (yes/NO)? yes    
+Purged 118613 messages from 1 known task queue.

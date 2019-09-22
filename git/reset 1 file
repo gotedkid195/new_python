@@ -1,0 +1,1 @@
+git checkout HEAD -- my-file.txt

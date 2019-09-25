@@ -23,17 +23,10 @@ supervisorctl restart celery:celery_00
 [2019-02-25 09:14:27,726: WARNING/ForkPoolWorker-6] Teslateq Box-Relay
 [2019-02-25 09:14:27,726: WARNING/ForkPoolWorker-6] Teslateq Box-Nhiệt độ, độ ẩm
 [2019-02-25 09:14:27,727: WARNING/ForkPoolWorker-6] Độ ẩm Dec:0.0 Hex:0000
-[2019-02-25 09:14:27,737: WARNING/ForkPoolWorker-6] Nhiệt độ Dec:0.0 Hex:0000
-[2019-02-25 09:14:27,751: INFO/ForkPoolWorker-6] Task chip_manager.tasks.store_sensor_data[ee82db14-c387-48d0-bf1c-618c6ae58b0d] succeeded in 0.07673822797369212s: None
-[2019-02-25 09:14:32,176: INFO/MainProcess] Received task: chip_manager.tasks.store_sensor_data[baca5924-b7ed-4ff1-a148-bc78a74c5851]  
-[2019-02-25 09:14:32,179: WARNING/ForkPoolWorker-1] 6
-[2019-02-25 09:14:32,180: WARNING/ForkPoolWorker-1] 000000000000000000000000
-[2019-02-25 09:14:32,199: WARNING/ForkPoolWorker-1] Teslateq Box-Đồng hồ điện năng
-[2019-02-25 09:14:32,199: WARNING/ForkPoolWorker-1] CS tiêu thụ Dec:0.0 Hex:00000000
-[2019-02-25 09:14:32,215: WARNING/ForkPoolWorker-1] Đã interval_log CS tiêu thụ: 0.0 time: 8s
-[2019-02-25 09:14:32,216: WARNING/ForkPoolWorker-1] CS tức thời Dec:0.0 Hex:00000000
-[2019-02-25 09:14:32,239: WARNING/ForkPoolWorker-1] Teslateq Box-Relay
-[2019-02-25 09:14:32,240: WARNING/ForkPoolWorker-1] Teslateq Box-Nhiệt độ, độ ẩm
-[2019-02-25 09:14:32,240: WARNING/ForkPoolWorker-1] Độ ẩm Dec:0.0 Hex:0000
-[2019-02-25 09:14:32,255: WARNING/ForkPoolWorker-1] Nhiệt độ Dec:0.0 Hex:0000
-[2019-02-25 09:14:32,272: INFO/ForkPoolWorker-1] Task chip_manager.tasks.store_sensor_data[baca5924-b7ed-4ff1-a148-bc78a74c5851] succeeded in 0.09324091300368309s: None
+
+➜  ~  (THIS IS SERVER) grep "25/Sep/2019:14:31:43 +0000" /var/log/nginx/api_access.log 
+59.153.243.252 - - [25/Sep/2019:14:31:43 +0000] "POST /chip_manager/sensor_data?code=846376543&version=1.2&format=json&id=0&interchange_count=1&is_first_interchange=1 HTTP/1.1" 200 1 "-" "SIMCOM_MODULE"
+103.199.56.89 - - [25/Sep/2019:14:31:43 +0000] "POST /chip_manager/sensor_data?code=001273704&version=1.2&format=json&id=4502&interchange_count=16&is_first_interchange=0 HTTP/1.1" 204 0 "-" "SIMCOM_MODULE"
+103.199.57.185 - - [25/Sep/2019:14:31:43 +0000] "POST /chip_manager/sensor_data?code=296204513&version=1.2&format=json&id=4489&interchange_count=8&is_first_interchange=0 HTTP/1.1" 204 0 "-" "SIMCOM_MODULE"
+58.186.196.128 - - [25/Sep/2019:14:31:43 +0000] "POST /chip_manager/sensor_data?code=362471333&version=1.2&format=json&id=4472&interchange_count=23&is_first_interchange=0 HTTP/1.1" 204 0 "-" "ESP8266HTTPClient"
+103.199.57.250 - - [25/Sep/2019:14:31:43 +0000] "POST /chip_manager/sensor_data?code=679882290&version=1.2&format=json&id=0&interchange_count=1&is_first_interchange=1 HTTP/1.1" 200 1 "-" "SIMCOM_MODULE"

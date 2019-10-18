@@ -152,7 +152,7 @@ supervisor>
   'Supervisord is running as root and it is searching '
 (iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) tail -f /var/log/nginx/error.log
  
- file error log khong chay => 
+ file error log khong chay => ok
 
 
 

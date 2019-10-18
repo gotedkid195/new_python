@@ -112,3 +112,47 @@
  4477  tail -f /var/log/nginx/error.log
 ➜  ~  (THIS IS SERVER) 
 
+
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) tail -f /var/log/nginx/error.log
+...............................
+2019/10/18 10:54:35 [error] 2089#2089: *1955 connect() to unix:/app/iteslateq-platform/uwsgi_api.sock failed (111: Connection refused) while connecting to upstream, client: 103.199.33.48, server: nossl.iotwhynot.com, request: "POST /chip_manager/sensor_data?code=629056969&version=1.2&format=json&id=0&interchange_count=37&is_first_interchange=1 HTTP/1.1", upstream: "uwsgi://unix:/app/iteslateq-platform/uwsgi_api.sock:", host: "nossl.iotwhynot.com"
+2019/10/18 10:54:35 [error] 2089#2089: *1963 connect() to unix:/app/iteslateq-platform/uwsgi_api.sock failed (111: Connection refused) while connecting to upstream, client: 103.199.33.37, server: nossl.iotwhynot.com, request: "POST /chip_manager/sensor_data?code=104717235&version=1.2&format=json&id=0&interchange_count=37&is_first_interchange=1 HTTP/1.1", upstream: "uwsgi://unix:/app/iteslateq-platform/uwsgi_api.sock:", host: "nossl.iotwhynot.com"
+^Z
+[1]  + 2139 suspended  tail -f /var/log/nginx/error.log
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER)  supervisorctl
+asgi:asgi0                       RUNNING   pid 1827, uptime 0:03:42
+asgi:asgi1                       RUNNING   pid 1826, uptime 0:03:42
+asgi:asgi2                       RUNNING   pid 1829, uptime 0:03:42
+asgi:asgi3                       RUNNING   pid 1828, uptime 0:03:42
+celery:celery_00                 RUNNING   pid 1830, uptime 0:03:42
+celery:celery_01                 RUNNING   pid 1831, uptime 0:03:42
+celery:celery_02                 FATAL     too many open files to spawn 'celery_02'
+celery_beat                      FATAL     too many open files to spawn 'celery_beat'
+flower                           FATAL     too many open files to spawn 'flower'
+uwsgi                            FATAL     too many open files to spawn 'uwsgi'
+uwsgi_api                        FATAL     too many open files to spawn 'uwsgi_api'
+supervisor> 
+[2]  + 2156 suspended  supervisorctl
+
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) ps aux | grep super
+root      1224  4.8  0.2  70828 14384 ?        Ss   Oct07 723:42 /usr/bin/python /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
+root      2156  0.6  0.3  65364 21376 pts/1    T    10:54   0:00 /usr/bin/python /usr/bin/supervisorctl
+root      2181  0.0  0.0  13136  1084 pts/1    S+   10:55   0:00 grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn super
+
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) kill 1224                       
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) ps aux | grep super
+root      2156  0.1  0.3  65364 21376 pts/1    T    10:54   0:00 /usr/bin/python /usr/bin/supervisorctl
+root      2233  0.0  0.0  13136  1096 pts/1    S+   10:57   0:00 grep --color=auto --exclude-dir=.bzr --exclude-dir=CVS --exclude-dir=.git --exclude-dir=.hg --exclude-dir=.svn super
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) supervisorctl
+unix:///var/run/supervisor.sock no such file
+supervisor> 
+[3]  + 2249 suspended  supervisorctl
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) supervisord
+/usr/lib/python2.7/dist-packages/supervisor/options.py:298: UserWarning: Supervisord is running as root and it is searching for its configuration file in default locations (including its current working directory); you probably want to specify a "-c" argument specifying an absolute path to a configuration file for improved security.
+  'Supervisord is running as root and it is searching '
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) tail -f /var/log/nginx/error.log
+ 
+ f
+
+
+

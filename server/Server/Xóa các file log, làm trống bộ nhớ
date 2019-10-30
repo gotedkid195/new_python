@@ -1,6 +1,6 @@
 Xoá trong 
 /var/log/nginx/error.log 
-/var/log/iotwhynot 
+/var/log/iotwhynot/celery.err.log 
 với mấy file log của mình đó e, file log error nó tự sinh ra
     
 ➜  ~  (THIS IS SERVER) ls /var/log/nginx/ 

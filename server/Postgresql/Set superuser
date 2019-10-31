@@ -1,0 +1,7 @@
+➜  iteslateq-platform git:(master) ✗ psql
+[sudo] password for nguyencanh: 
+psql (9.5.19)
+Type "help" for help.
+
+postgres=# ALTER USER teslateq WITH SUPERUSER;
+ALTER ROLE

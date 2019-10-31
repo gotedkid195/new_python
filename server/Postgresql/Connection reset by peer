@@ -13,4 +13,22 @@ Error 522
 (iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER)
 
 1. Check postgresql working
+
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) psql -V
+psql (PostgreSQL) 9.5.19
+             
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) service postgresql status 
+● postgresql.service - PostgreSQL RDBMS
+   Loaded: loaded (/lib/systemd/system/postgresql.service; enabled; vendor preset: enabled)
+   Active: active (exited) since Wed 2019-10-30 02:01:11 UTC; 1 day 6h ago
+ Main PID: 1690 (code=exited, status=0/SUCCESS)
+    Tasks: 0 (limit: 4915)
+   CGroup: /system.slice/postgresql.service
+
+Oct 30 02:01:11 vpsxxx systemd[1]: Starting PostgreSQL RDBMS...
+Oct 30 02:01:11 vpsxxx systemd[1]: Started PostgreSQL RDBMS.
+
+
 2. Restart database
+
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) service postgresql restart

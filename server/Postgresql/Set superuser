@@ -1,4 +1,4 @@
-➜  iteslateq-platform git:(master) ✗ psql
+➜  iteslateq-platform git:(master) ✗ sudo -u postgres psql
 [sudo] password for nguyencanh: 
 psql (9.5.19)
 Type "help" for help.

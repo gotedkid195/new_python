@@ -1,0 +1,16 @@
+Error 522
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) tail /var/log/postgresql/postgresql-10-main.log
+2019-10-30 16:18:20.675 UTC [31058] teslateq@teslateq LOG:  duration: 9437.412 ms  statement: UPDATE "chip_manager_healthy" SET "chip_id" = 7, "temp" = '705.05', "volt" = '51.19', "gpio" = 0, "signal" = 31, "modbus_fail" = 0, "modbus_total" = 0, "created_at" = '2019-10-30T16:18:00.233253+00:00'::timestamptz WHERE "chip_manager_healthy"."id" = 24034329
+2019-10-30 16:18:20.679 UTC [31078] teslateq@teslateq LOG:  duration: 9705.374 ms  statement: UPDATE "chip_manager_healthy" SET "chip_id" = 1026, "temp" = '31.29', "volt" = '23.71', "gpio" = 0, "signal" = 23, "modbus_fail" = 0, "modbus_total" = 0, "created_at" = '2019-10-30T16:18:00.301479+00:00'::timestamptz WHERE "chip_manager_healthy"."id" = 24034332
+2019-10-30 16:18:20.679 UTC [31062] teslateq@teslateq LOG:  duration: 8195.157 ms  statement: UPDATE "chip_manager_healthy" SET "chip_id" = 19, "temp" = '44.55', "volt" = '33.30', "gpio" = 0, "signal" = 25, "modbus_fail" = 0, "modbus_total" = 0, "created_at" = '2019-10-30T16:18:03.363427+00:00'::timestamptz WHERE "chip_manager_healthy"."id" = 24034342
+2019-10-30 16:18:20.679 UTC [31057] teslateq@teslateq LOG:  duration: 10029.627 ms  statement: UPDATE "chip_manager_healthy" SET "chip_id" = 1104, "temp" = '32.04', "volt" = '25.00', "gpio" = 0, "signal" =  -53, "modbus_fail" = 0, "modbus_total" = 81, "created_at" = '2019-10-30T16:18:00.425165+00:00'::timestamptz WHERE "chip_manager_healthy"."id" = 24034333
+2019-10-30 19:03:07.888 UTC [9063] teslateq@teslateq LOG:  could not receive data from client: Connection reset by peer
+2019-10-31 04:34:17.922 UTC [20696] teslateq@teslateq LOG:  could not receive data from client: Connection reset by peer
+2019-10-31 08:16:49.703 UTC [29699] [unknown]@[unknown] LOG:  could not accept SSL connection: Success
+2019-10-31 08:16:49.761 UTC [29701] [unknown]@[unknown] LOG:  could not accept SSL connection: Success
+2019-10-31 08:16:49.821 UTC [29698] [unknown]@[unknown] LOG:  could not accept SSL connection: Success
+2019-10-31 08:17:00.832 UTC [29730] teslateq@teslateq LOG:  could not receive data from client: Connection reset by peer
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER)
+
+1. Check postgresql working
+2. Restart database

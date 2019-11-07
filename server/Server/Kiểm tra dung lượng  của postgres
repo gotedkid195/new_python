@@ -1,18 +1,15 @@
-➜  iteslateq-platform git:(mater) ✗ sudo su - postgres 
-[sudo] password for nguyencanh: 
-postgres@canh-nguyen:~$ psql
-psql (9.5.17)
+Last login: Thu Nov  7 04:14:57 2019 from 171.226.37.147
+➜  ~  (THIS IS SERVER) sudo su - postgres
+postgres@vpsxxx:~$ psql
+psql (10.10 (Ubuntu 10.10-0ubuntu0.18.04.1))
 Type "help" for help.
-
-Để xác định kích thước của cơ sở dữ liệu, hãy gõ lệnh sau. 
-Thay thế dbname bằng tên của cơ sở dữ liệu mà bạn muốn kiểm tra:
-SELECT pg_size_pretty( pg_database_size('dbname') );
 
 postgres=# SELECT pg_size_pretty( pg_database_size('teslateq') );
  pg_size_pretty 
 ----------------
- 11 MB            => 11 MB là size của database
+ 60 GB  
 (1 row)
+
                                                 ^
 postgres=# \d+
 

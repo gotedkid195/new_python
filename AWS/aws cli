@@ -1,0 +1,10 @@
+upload folder len s3
+(iteslateq-platform)➜  iteslateq-platform git:(master) aws s3 cp frontend/static s3://iotwhynot/frontend/static --recursive --acl public-read
+
+m
+(iteslateq-platform)➜  iteslateq-platform git:(master) aws s3 mv s3://canhnguyen/abc/ frontend/
+move failed: s3://canhnguyen/abc/ to frontend/ [Errno 20] Not a directory: '/home/nguyencanh/iteslateq-platform/frontend/.33D9AB86' -> '/home/nguyencanh/iteslateq-platform/frontend/'
+
+(iteslateq-platform)➜  iteslateq-platform git:(master) aws s3 mv s3://canhnguyen/abc/ frontend/abc/ --recursive --acl public-read
+move: s3://canhnguyen/abc/ima.csv to frontend/abc/ima.csv 
+

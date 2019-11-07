@@ -1,0 +1,16 @@
+teslateq=> show statement_timeout;
+ statement_timeout 
+-------------------
+ 10s
+(1 row)
+
+teslateq=> set statement_timeout to 30000; commit;
+SET
+WARNING:  there is no transaction in progress
+COMMIT
+teslateq=> show statement_timeout;
+ statement_timeout 
+-------------------
+ 30s
+(1 row)
+

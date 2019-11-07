@@ -146,6 +146,16 @@ ERROR:  canceling statement due to statement timeout
 iteslateq=# ALTER TABLE chip_manager_config ADD COLUMN is_alarm boolean;  // them column vao tabel
 ALTER TABLE
 
+
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) python manage.py dbshell
+psql (10.10 (Ubuntu 10.10-0ubuntu0.18.04.1))
+SSL connection (protocol: TLSv1.3, cipher: TLS_AES_256_GCM_SHA384, bits: 256, compression: off)
+Type "help" for help.
+
+teslateq=> TRUNCATE TABLE chip_manager_value;   => su dung TRUNCATE se xoa tat ca value trong table (xóa nhanh), khac voi DROP se xoa luon cau truc cua table 
+TRUNCATE TABLE
+
+
 db=> DROP TABLE chip_manager_timeonoff;  // xoa table
 DROP TABLE
 

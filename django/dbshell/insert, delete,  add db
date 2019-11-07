@@ -14,46 +14,6 @@ db=> \d+;
  public | accounts_user_id_seq                    | sequence | root  | 8192 bytes | 
  public | accounts_user_user_permissions          | table    | root  | 0 bytes    | 
  public | accounts_user_user_permissions_id_seq   | sequence | root  | 8192 bytes | 
- public | auth_group                              | table    | root  | 0 bytes    | 
- public | auth_group_id_seq                       | sequence | root  | 8192 bytes | 
- public | auth_group_permissions                  | table    | root  | 0 bytes    | 
- public | auth_group_permissions_id_seq           | sequence | root  | 8192 bytes | 
- public | auth_permission                         | table    | root  | 8192 bytes | 
- public | auth_permission_id_seq                  | sequence | root  | 8192 bytes | 
- public | authtoken_token                         | table    | root  | 0 bytes    | 
- public | chip_manager_chip                       | table    | root  | 16 kB      | 
- public | chip_manager_chip_id_seq                | sequence | root  | 8192 bytes | 
- public | chip_manager_config                     | table    | root  | 40 kB      | 
- public | chip_manager_config_id_seq              | sequence | root  | 8192 bytes | 
- public | chip_manager_healthy                    | table    | root  | 8192 bytes | 
- public | chip_manager_healthy_id_seq             | sequence | root  | 8192 bytes | 
- public | chip_manager_savedconfig                | table    | root  | 48 kB      | 
- public | chip_manager_savedconfig_id_seq         | sequence | root  | 8192 bytes | 
- public | chip_manager_sensor                     | table    | root  | 8192 bytes | 
- public | chip_manager_sensor_id_seq              | sequence | root  | 8192 bytes | 
- public | chip_manager_value                      | table    | root  | 8192 bytes | 
- public | chip_manager_value_id_seq               | sequence | root  | 8192 bytes | 
- public | django_admin_log                        | table    | root  | 152 kB     | 
- public | django_admin_log_id_seq                 | sequence | root  | 8192 bytes | 
- public | django_celery_results_taskresult        | table    | root  | 8192 bytes | 
- public | django_celery_results_taskresult_id_seq | sequence | root  | 8192 bytes | 
- public | django_content_type                     | table    | root  | 8192 bytes | 
- public | django_content_type_id_seq              | sequence | root  | 8192 bytes | 
- public | django_migrations                       | table    | root  | 48 kB      | 
- public | django_migrations_id_seq                | sequence | root  | 8192 bytes | 
- public | django_session                          | table    | root  | 64 kB      | 
- public | django_site                             | table    | root  | 8192 bytes | 
- public | django_site_id_seq                      | sequence | root  | 8192 bytes | 
- public | manager_station                         | table    | root  | 16 kB      | 
- public | manager_station_id_seq                  | sequence | root  | 8192 bytes | 
- public | otp_static_staticdevice                 | table    | root  | 8192 bytes | 
- public | otp_static_staticdevice_id_seq          | sequence | root  | 8192 bytes | 
- public | otp_static_statictoken                  | table    | root  | 8192 bytes | 
- public | otp_static_statictoken_id_seq           | sequence | root  | 8192 bytes | 
- public | otp_totp_totpdevice                     | table    | root  | 8192 bytes | 
- public | otp_totp_totpdevice_id_seq              | sequence | root  | 8192 bytes | 
- public | two_factor_phonedevice                  | table    | root  | 0 bytes    | 
- public | two_factor_phonedevice_id_seq           | sequence | root  | 8192 bytes | 
 
 
 db=> \d accounts_org;
@@ -65,20 +25,6 @@ db=> \d accounts_org;
  project                  | character varying(50)  | not null
  email                    | character varying(254) | not null
  logo                     | character varying(100) | not null
- banner                   | character varying(100) | not null
- homepage                 | character varying(200) | not null
- top_header_background    | character varying(18)  | not null
- top_header_color         | character varying(18)  | not null
- header_menu_background   | character varying(18)  | not null
- header_menu_color        | character varying(18)  | not null
- content_block_background | character varying(18)  | not null
- content_block_color      | character varying(18)  | not null
- footer_background        | character varying(18)  | not null
- footer_color             | character varying(18)  | not null
- contact_background       | character varying(18)  | not null
- contact_color            | character varying(18)  | not null
- owner_id                 | integer                | not null
- background_login         | character varying(100) | not null
  max_total_user           | integer                | not null
 
 
@@ -97,17 +43,6 @@ db=> \d  accounts_org
  banner                   | character varying(100) | not null
  homepage                 | character varying(200) | not null
  top_header_background    | character varying(18)  | not null
- top_header_color         | character varying(18)  | not null
- header_menu_background   | character varying(18)  | not null
- header_menu_color        | character varying(18)  | not null
- content_block_background | character varying(18)  | not null
- content_block_color      | character varying(18)  | not null
- footer_background        | character varying(18)  | not null
- footer_color             | character varying(18)  | not null
- contact_background       | character varying(18)  | not null
- contact_color            | character varying(18)  | not null
- owner_id                 | integer                | not null
- max_total_user           | integer                | not null
 
 
 >>> station = Station.objects.get(pk=1)
@@ -155,6 +90,12 @@ Type "help" for help.
 teslateq=> TRUNCATE TABLE chip_manager_value;   => su dung TRUNCATE se xoa tat ca value trong table (xóa nhanh), khac voi DROP se xoa luon cau truc cua table 
 TRUNCATE TABLE
 
+teslateq=# TRUNCATE ONLY chip_manager_currentvalue;
+ERROR:  cannot truncate a table referenced in a foreign key constraint
+DETAIL:  Table "chip_manager_config" references "chip_manager_currentvalue".
+HINT:  Truncate table "chip_manager_config" at the same time, or use TRUNCATE ... CASCADE.
+
+(Khong dc su dung  TRUNCATE ... CASCADE nse xoa tat ca foregin key lien quan den table )
 
 db=> DROP TABLE chip_manager_timeonoff;  // xoa table
 DROP TABLE

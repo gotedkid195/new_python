@@ -1,3 +1,4 @@
+https://github.com/hprobotic/git-tips
 
 git co HEAD -- chip_manager/models/config.py     // xóa thay đổi của 1 file nào đó
 git reset --hard                                // xóa tât cả thay đôi trên nhanh hien tai

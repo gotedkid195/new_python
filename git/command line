@@ -1,0 +1,9 @@
+https://github.com/hprobotic/git-tips
+
+git co HEAD -- chip_manager/models/config.py     // xóa thay đổi của 1 file nào đó
+git reset --hard                                // xóa tât cả thay đôi trên nhanh hien tai
+git reset --hard HEAD~1                         // quay tro ve 1 cm cu (khong làm thay doi cac cm khac tren master)
+git checkout @ -- Pipfile.lock                   // xoa thay doi tren file Pipfile.lock
+git revert 8e2fe01ea99d4e26d02d9b12259fe6cf713ab0b5 // xóa nhung thay đôi tren cm do,no se tu dong cm lai, sau đó mình push len master
+git reset -- chip_manager/models/config.py    //  xoa thay doi tren file chip_manager/models/config.py
+git reset --soft HEAD~1                      // xoa cm nhung khong xoa nhung file da thay doi

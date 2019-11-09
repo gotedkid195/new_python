@@ -1,4 +1,0 @@
- git checkout @ -- iteslateq/settings.py
- 
-➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) git checkout @ -- iteslateq/settings.py
-➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) git status

@@ -1,0 +1,6 @@
+
+teslateq=> SELECT * FROM chip_manager_currentvalue WHERE id = 7352743;   
+   id    | value |          created_at           | config_id 
+---------+-------+-------------------------------+-----------
+ 7352743 |  0.00 | 2019-03-02 14:29:45.061082+00 |       109
+(1 row)

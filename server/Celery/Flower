@@ -1,0 +1,18 @@
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) celery -A iteslateq flower --port=5555
+[I 191112 21:21:04 command:136] Visit me at http://localhost:5555
+[I 191112 21:21:04 command:141] Broker: redis://localhost:6379/1
+[I 191112 21:21:04 command:144] Registered tasks: 
+    ['accounts.tasks.create_cloudflare_subdomain',
+     'celery.accumulate',
+     'celery.backend_cleanup',
+     'celery.chain',
+     'celery.chord',
+     'celery.chord_unlock',
+     'celery.chunks',
+     'celery.group',
+     'celery.map',
+     'celery.starmap',
+     'chip_manager.tasks.sync_sensor_data',
+     'djcelery_email_send_multiple',
+
+http://27.234.446.234:5555//tasks

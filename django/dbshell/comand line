@@ -4,3 +4,6 @@ teslateq=> SELECT * FROM chip_manager_currentvalue WHERE id = 7352743;
 ---------+-------+-------------------------------+-----------
  7352743 |  0.00 | 2019-03-02 14:29:45.061082+00 |       109
 (1 row)
+
+teslateq=> DELETE FROM  chip_manager_minmax WHERE id < 2040055;
+DELETE 8729

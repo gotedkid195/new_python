@@ -79,3 +79,8 @@ remote: Compressing objects: 100% (93/93), done.
 remote: Total 17747 (delta 81), reused 92 (delta 49), pack-reused 17599
 Receiving objects: 100% (17747/17747), 17.99 MiB | 1.47 MiB/s, done.
 Resolving deltas: 100% (11671/11671), done.
+
+
+canhnguyen@Latitude-E6420:~$ sudo apt install zsh
+canhnguyen@Latitude-E6420:~$ sudo apt-get install powerline fonts-powerline 
+google tiep...

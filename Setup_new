@@ -1,0 +1,81 @@
+canhnguyen@Latitude-E6420:~$ sudo apt install python3-pip python3-dev
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+python3-dev is already the newest version (3.7.3-1).
+python3-dev set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 307 not upgraded.
+
+
+canhnguyen@Latitude-E6420:~$ pip3 install --user pipenv
+Collecting pipenv
+  Downloading https://files.pythonhosted.org/packages/13/b4/3ffa55f77161cff9a5220f162670f7c5eb00df52e00939e203f601b0f579/pipenv-2018.11.26-py3-none-any.whl (5.2MB)
+    100% |████████████████████████████████| 5.2MB 273kB/s 
+Collecting virtualenv (from pipenv)
+  Downloading https://files.pythonhosted.org/packages/c5/97/00dd42a0fc41e9016b23f07ec7f657f636cb672fad9cf72b80f8f65c6a46/virtualenv-16.7.7-py2.py3-none-any.whl (3.4MB)
+    100% |████████████████████████████████| 3.4MB 436kB/s 
+Requirement already satisfied: certifi in /usr/lib/python3/dist-packages (from pipenv) (2018.8.24)
+Requirement already satisfied: pip>=9.0.1 in /usr/lib/python3/dist-packages (from pipenv) (18.1)
+Collecting virtualenv-clone>=0.2.5 (from pipenv)
+  Downloading https://files.pythonhosted.org/packages/ba/f8/50c2b7dbc99e05fce5e5b9d9a31f37c988c99acd4e8dedd720b7b8d4011d/virtualenv_clone-0.5.3-py2.py3-none-any.whl
+Requirement already satisfied: setuptools>=36.2.1 in /usr/lib/python3/dist-packages (from pipenv) (40.8.0)
+Installing collected packages: virtualenv, virtualenv-clone, pipenv
+  The script virtualenv is installed in '/home/canhnguyen/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  The script virtualenv-clone is installed in '/home/canhnguyen/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  The scripts pipenv and pipenv-resolver are installed in '/home/canhnguyen/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed pipenv-2018.11.26 virtualenv-16.7.7 virtualenv-clone-0.5.3
+
+
+canhnguyen@Latitude-E6420:~$ echo "PATH=$HOME/.local/bin:$PATH" >> ~/.bashrc
+canhnguyen@Latitude-E6420:~$ source ~/.bashrc
+
+
+canhnguyen@Latitude-E6420:~$ sudo apt-get install git
+
+canhnguyen@Latitude-E6420:~$ ssh-keygen -t rsa -b 4096 -C "nguyenhuucanh95@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/canhnguyen/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/canhnguyen/.ssh/id_rsa.
+Your public key has been saved in /home/canhnguyen/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:FElavObcpDyMLx85rnms2kCB4Qen0/QB3UeX9+MjZ0Y nguyenhuucanh95@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|  o +o.++o. ..   |
+| . O ..++.... .  |
+|  = + o .o   . . |
+|   o . .o .    E.|
+|    .  BS+    o .|
+|   .  . B..  . * |
+|    .  o+.    = .|
+|     o.o+o       |
+|    ..=*o        |
++----[SHA256]-----+
+
+
+canhnguyen@Latitude-E6420:~$ eval "$(ssh-agent -s)"
+Agent pid 4301
+
+
+canhnguyen@Latitude-E6420:~$ ssh-add ~/.ssh/id_rsa
+Identity added: /home/canhnguyen/.ssh/id_rsa (nguyenhuucanh95@gmail.com)
+
+
+canhnguyen@Latitude-E6420:~$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCwQ5Tk1a6o8.......bQ== nguyenhuucanh95@gmail.com
+
+
+canhnguyen@Latitude-E6420:~$ git clone git@github.com:platform.git
+Cloning into 'platform'...
+Warning: Permanently added the RSA host key for IP address '50.70.220.110' to the list of known hosts.
+remote: Enumerating objects: 148, done.
+remote: Counting objects: 100% (148/148), done.
+remote: Compressing objects: 100% (93/93), done.
+remote: Total 17747 (delta 81), reused 92 (delta 49), pack-reused 17599
+Receiving objects: 100% (17747/17747), 17.99 MiB | 1.47 MiB/s, done.
+Resolving deltas: 100% (11671/11671), done.

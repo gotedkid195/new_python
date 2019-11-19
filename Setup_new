@@ -87,10 +87,51 @@ canhnguyen@Latitude-E6420:~$ sudo apt-get install powerline fonts-powerline
 google tiep...
 
 
- canhnguyen@Latitude-E6420  sudo apt-get install binutils libproj-dev gdal-bin
+canhnguyen@Latitude-E6420:~$  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+OK
+canhnguyen@Latitude-E6420:~$ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+canhnguyen@Latitude-E6420:~$ sudo apt install postgresql postgresql-contrib -y
+canhnguyen@Latitude-E6420:~$ sudo su – postgres
 
- canhnguyen@Latitude-E6420  ~  cd iteslateq-platform 
- canhnguyen@Latitude-E6420  ~/iteslateq-platform   master  pipenv shell
+canhnguyen@Latitude-E6420:~$ createuser --interactive -P
+Enter name of role to add: test
+Enter password for new role: 
+Enter it again: 
+Shall the new role be a superuser? (y/n) y
+
+canhnguyen@Latitude-E6420:~$ createdb --owner test test
+canhnguyen@Latitude-E6420:~$ logout
+
+
+ canhnguyen@Latitude-E6420  ~  sudo apt install redis-server
+[sudo] password for canhnguyen: 
+Reading package lists... Done
+Processing triggers for systemd (240-6ubuntu5.7) ...
+Processing triggers for man-db (2.8.5-2) ...
+Processing triggers for libc-bin (2.29-0ubuntu2) ...
+
+ ✘ canhnguyen@Latitude-E6420  ~  sudo systemctl start redis-server.service
+ canhnguyen@Latitude-E6420  ~  sudo systemctl enable redis-server.service
+Synchronizing state of redis-server.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable redis-server
+ canhnguyen@Latitude-E6420  ~  sudo apt install php-redis
+Reading package lists... Done
+Building dependency tree       
+
+Creating config file /etc/php/7.2/phpdbg/php.ini with new version
+Setting up php-igbinary (3.0.0-1) ...
+Setting up php-redis (4.2.0-1) ...
+Processing triggers for man-db (2.8.5-2) ...
+ canhnguyen@Latitude-E6420  ~  redis-cli -v
+redis-cli 5.0.3
+ canhnguyen@Latitude-E6420  ~   redis-cli ping
+PONG
+
+
+canhnguyen@Latitude-E6420  sudo apt-get install binutils libproj-dev gdal-bin
+
+canhnguyen@Latitude-E6420  ~  cd iteslateq-platform 
+canhnguyen@Latitude-E6420  ~/iteslateq-platform   master  pipenv shell
 Launching subshell in virtual environment…
  . /home/canhnguyen/.local/share/virtualenvs/iteslateq-platform-RP_V8dSf/bin/activate
  canhnguyen@Latitude-E6420  ~/iteslateq-platform   master   . /home/canhnguyen/.l(itesl(it((i((iteslateq-platform)  

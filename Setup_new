@@ -35,6 +35,8 @@ canhnguyen@Latitude-E6420:~$ source ~/.bashrc
 
 
 canhnguyen@Latitude-E6420:~$ sudo apt-get install git
+canhnguyen@Latitude-E6420  ~   git config --global user.email "nguyenhuucanh@gmail.com"
+canhnguyen@Latitude-E6420  ~  git config --global user.name "goted"
 canhnguyen@Latitude-E6420  ~  git config --global alias.co checkout
 canhnguyen@Latitude-E6420  ~  git config --global alias.br branch
 canhnguyen@Latitude-E6420  ~   git config --global alias.st status

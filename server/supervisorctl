@@ -1,0 +1,59 @@
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) supervisorctl
+asgi:asgi0                       RUNNING   pid 3057, uptime 2:24:58
+asgi:asgi1                       RUNNING   pid 3056, uptime 2:24:58
+asgi:asgi2                       RUNNING   pid 3059, uptime 2:24:58
+asgi:asgi3                       RUNNING   pid 3058, uptime 2:24:58
+celery:celery_00                 RUNNING   pid 3060, uptime 2:24:58
+celery_beat                      RUNNING   pid 3061, uptime 2:24:58
+flower                           RUNNING   pid 3055, uptime 2:24:58
+uwsgi                            RUNNING   pid 3063, uptime 2:24:58
+uwsgi_api                        RUNNING   pid 3062, uptime 2:24:58
+supervisor> stop celery:celery_00
+celery:celery_00: stopped
+supervisor> stop celery_beat
+celery_beat: stopped
+supervisor> stop asgi:asgi0
+asgi:asgi0: stopped
+supervisor> stop asgi:asgi1
+asgi:asgi1: stopped
+supervisor> stop asgi:asgi2
+asgi:asgi2: stopped
+supervisor> stop asgi:asgi3
+asgi:asgi3: stopped
+supervisor> 
+[2]  + 16441 suspended  supervisorctl
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) supervisorctl
+asgi:asgi0                       STOPPED   Nov 25 02:28 PM
+asgi:asgi1                       STOPPED   Nov 25 02:28 PM
+asgi:asgi2                       STOPPED   Nov 25 02:28 PM
+asgi:asgi3                       STOPPED   Nov 25 02:28 PM
+celery:celery_00                 STOPPED   Nov 25 02:23 PM
+celery_beat                      STOPPED   Nov 25 02:23 PM
+flower                           RUNNING   pid 3055, uptime 2:34:19
+uwsgi                            RUNNING   pid 3063, uptime 2:34:19
+uwsgi_api                        RUNNING   pid 3062, uptime 2:34:19
+supervisor> start asgi:asgi0
+asgi:asgi0: started
+supervisor> start asgi:asgi1
+asgi:asgi1: started
+supervisor> start asgi:asgi2
+asgi:asgi2: started
+supervisor> start asgi:asgi3
+asgi:asgi3: started
+supervisor> start celery:celery_00 
+celery:celery_00: started
+supervisor> start celery_beat 
+celery_beat: started
+supervisor> 
+[3]  + 899 suspended  supervisorctl
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) supervisorctl
+asgi:asgi0                       RUNNING   pid 1448, uptime 0:01:11
+asgi:asgi1                       RUNNING   pid 1537, uptime 0:01:06
+asgi:asgi2                       RUNNING   pid 1600, uptime 0:01:02
+asgi:asgi3                       RUNNING   pid 1692, uptime 0:00:57
+celery:celery_00                 RUNNING   pid 1955, uptime 0:00:43
+celery_beat                      RUNNING   pid 4350, uptime 0:00:21
+flower                           RUNNING   pid 3055, uptime 2:35:59
+uwsgi                            RUNNING   pid 3063, uptime 2:35:59
+uwsgi_api                        RUNNING   pid 3062, uptime 2:35:59
+supervisor> 

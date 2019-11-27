@@ -7,3 +7,5 @@ teslateq=> SELECT * FROM chip_manager_currentvalue WHERE id = 7352743;
 
 teslateq=> DELETE FROM  chip_manager_minmax WHERE id < 2040055;
 DELETE 8729
+
+teslateq=> UPDATE  chip_manager_currentvalue SET config_id = NULL WHERE id = 245089021;

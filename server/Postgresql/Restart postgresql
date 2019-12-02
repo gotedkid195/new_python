@@ -1,2 +1,21 @@
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) service postgresql status 
+● postgresql.service - PostgreSQL RDBMS
+   Loaded: loaded (/lib/systemd/system/postgresql.service; enabled; vendor prese
+   Active: active (exited) since Mon 2019-12-02 03:24:14 UTC; 6min ago
+  Process: 17182 ExecStart=/bin/true (code=exited, status=0/SUCCESS)
+ Main PID: 17182 (code=exited, status=0/SUCCESS)
+
+Dec 02 03:24:14 vpsxxx systemd[1]: Starting PostgreSQL RDBMS...
+Dec 02 03:24:14 vpsxxx systemd[1]: Started PostgreSQL RDBMS.
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) service postgresql stop  
 (iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) service postgresql restart
-(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) 
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) service postgresql status 
+● postgresql.service - PostgreSQL RDBMS
+   Loaded: loaded (/lib/systemd/system/postgresql.service; enabled; vendor prese
+   Active: active (exited) since Mon 2019-12-02 03:31:34 UTC; 5s ago
+  Process: 20910 ExecStart=/bin/true (code=exited, status=0/SUCCESS)
+ Main PID: 20910 (code=exited, status=0/SUCCESS)
+
+Dec 02 03:31:34 vpsxxx systemd[1]: Starting PostgreSQL RDBMS...
+Dec 02 03:31:34 vpsxxx systemd[1]: Started PostgreSQL RDBMS.
+lines 1-8/8 (END)

@@ -19,3 +19,10 @@ Dec 02 03:24:14 vpsxxx systemd[1]: Started PostgreSQL RDBMS.
 Dec 02 03:31:34 vpsxxx systemd[1]: Starting PostgreSQL RDBMS...
 Dec 02 03:31:34 vpsxxx systemd[1]: Started PostgreSQL RDBMS.
 lines 1-8/8 (END)
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+ 
+(iteslateq-platform) ➜  ~  sudo /etc/init.d/postgresql restart
+[ ok ] Restarting postgresql (via systemctl): postgresql.service.

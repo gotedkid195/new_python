@@ -135,6 +135,8 @@ PONG
 
 
 canhnguyen@Latitude-E6420  sudo apt-get install binutils libproj-dev gdal-bin
+
+https://linuxize.com/post/how-to-install-node-js-on-ubuntu-18.04/?fbclid=IwAR3jH78qfdRf7GaepFc8T8JmPtnOLoSMUgs0YEpQS3Ev8PApE8-CIT6PeBw
 ➜  ~  sudo apt install curl
 Unpacking curl (7.64.0-2ubuntu1.2) ...
 Setting up curl (7.64.0-2ubuntu1.2) ...

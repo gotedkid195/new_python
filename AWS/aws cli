@@ -6,7 +6,7 @@ m
 move failed: s3://canhnguyen/abc/ to frontend/ [Errno 20] Not a directory: '/home/nguyencanh/iteslateq-platform/frontend/.33D9AB86' -> '/home/nguyencanh/iteslateq-platform/frontend/'
 
 
-clone thu muc canhnguyen/abc/ tren s3 ve frontend/abc/ local, s 
+clone thu muc canhnguyen/abc/ tren s3 ve frontend/abc/ local, se lam mat file abc tr
 (iteslateq-platform)➜  iteslateq-platform git:(master) aws s3 mv s3://canhnguyen/abc/ frontend/abc/ --recursive --acl public-read
 move: s3://canhnguyen/abc/ima.csv to frontend/abc/ima.csv 
 

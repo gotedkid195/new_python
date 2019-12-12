@@ -197,3 +197,5 @@ canhnguyen@Latitude-E6420:~$ cat ~/.ssh/id_rsa.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCwQ5Tk1a6o8.......bQ== nguyenhuucanh95@gmail.com
 
 ➜  ~  (THIS IS SERVER) nano ~/.ssh/authorized_keys    
+
+https://ngrok.com/download

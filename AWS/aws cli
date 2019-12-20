@@ -1,4 +1,15 @@
-upload folder len s3
+cau hinh aws
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗ aws configure                                                      
+
+day file media/image tư server len s3
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) aws s3 cp media/image s3://teslateq/image --recursive --acl public-read
+
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) aws s3 cp static s3://teslateq/static --recursive --acl public-read
+
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) aws s3 cp media/uploads s3://teslateq/uploads --recursive --acl public-read
+
+
+upload folder len s3 khong làm mat file bên duoi server
 (iteslateq-platform)➜  iteslateq-platform git:(master) aws s3 cp frontend/static s3://iotwhynot/frontend/static --recursive --acl public-read
 
 m

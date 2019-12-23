@@ -21,3 +21,5 @@ removed '/var/log/iotwhynot/celery.err.log'
 
 ➜  ~  (THIS IS SERVER) rm -v /var/log/iotwhynot/*.log
 ➜  ~  (THIS IS SERVER) rm -v /var/log/nginx/*.log 
+
+tail -f /var/log/postgresql/postgresql-10-main.log 

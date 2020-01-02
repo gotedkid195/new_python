@@ -1,0 +1,25 @@
+https://www.sitecuatui.com/imwheel/
+sudo apt-get install imwheel
+
+gedit ~/.imwheelrc
+Dán vào tệp trên với nội dung như sau:
+
+".*"
+None,      Up,   Button4, 3
+None,      Down, Button5, 3
+Control_L, Up,   Control_L|Button4
+Control_L, Down, Control_L|Button5
+Shift_L,   Up,   Shift_L|Button4
+Shift_L,   Down, Shift_L|Button5
+
+Sử dụng lệnh sau để chắc chắn IMWheel sẽ được khởi động lại.
+
+imwheel --kill
+Mỗi khi khởi động hệ điều hành, bạn cần phải chạy IMWheel hoặc cấu hình để tự động khởi động ứng dụng cùng với hệ thống.
+
+Để tự động chạy IMWheel mỗi khi khởi động hệ điều hành Ubuntu và Linux Mint, bạn chỉ cần thêm nó vào Startup Applications.
+
+Alt + F2 -> gnome-session-properties 
+Name: IMWheel
+Command: imwheel
+Comment: IMWheel 

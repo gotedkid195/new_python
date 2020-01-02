@@ -1,0 +1,57 @@
+sudo add-apt-repository ppa:webupd8team/java   
+sudo apt-get update                             => Sau khi cai xong nen restart lai may rồi ms chạy tiếp
+sudo apt-get install oracle-java8-installer
+sudo apt-get install oracle-java8-set-default
+
+➜  ~ sudo apt install openjdk-8-jdk  
+➜  ~ sudo apt install openjdk-8-jre           
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+openjdk-8-jre is already the newest version (8u232-b09-0ubuntu1~19.04.1).
+openjdk-8-jre set to manually installed.
+0 upgraded, 0 newly installed, 0 to remove and 2 not upgraded.
+
+➜  ~ java -version   
+
+➜  ~ sudo apt install snapd
+
+➜  ~ systemctl start snapd              => start snap len
+➜  ~ systemctl enable snapd             => cap quyền cho snap
+➜  ~ systemctl start apparmor
+➜  ~ systemctl enable apparmor
+Synchronizing state of apparmor.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable apparmor
+➜  ~ gedit ~/.bashrc
+# export PATH=$PATH:/snap/bin          => them dong nay vao .bashrc
+➜  ~ source ~/.bashrc                  => chay .bashrc 
+
+➜  ~ snap install snapcraft --classic  => cai them cac tool quan ly cua snap de chạy may ao (windown) on dinh
+snapcraft 3.8 from Canonical✓ installed
+➜  ~ hash -r
+
+➜  ~ snap refresh snap-store
+snap "snap-store" has no updates available
+➜  ~ sudo apt-get update                            
+[sudo] password for canhnguyen: 
+Ign:1 http://dl.google.com/linux/chrome/deb stable InRelease
+Hit:2 https://deb.nodesource.com/node_12.x disco InRelease                    
+Get:15 http://security.ubuntu.com/ubuntu disco-security/universe DEP-11 64x64 Icons [49,7 kB]
+Get:16 http://vn.archive.ubuntu.com/ubuntu disco-backports/universe amd64 DEP-11 Metadata [7.980 B]
+Fetched 356 kB in 3s (128 kB/s)              
+Reading package lists... Done
+N: Skipping acquire of configured file 'main/binary-i386/Packages' as repository 'http://apt.postgresql.org/pub/repos/apt disco-pgdg InRelease' doesn't support architecture 'i386'
+
+➜  ~ sudo apt-get upgrade
+Reading package lists... Done
+Setting up nodejs (12.14.0-1nodesource1) ...
+Processing triggers for desktop-file-utils (0.23-4ubuntu1) ...
+Processing triggers for mime-support (3.60ubuntu1) ...
+Processing triggers for gnome-menus (3.32.0-1ubuntu1) ...
+Processing triggers for man-db (2.8.5-2) ...
+
+
+Snap Store là một ứng dụng cài đặt và quản lý app trên Linux.
+Snap Store có hầu hết các công cụ hỗ trợ phổ biến trên kali linux ngoài ra còn có những công cụ và phần mềm của windows,
+bạn dễ dàng tìm kiếm các ứng dụng trên website hoặc trên snap store trên kali linux.
+Đặt biệt snap có tính năng cho người dùng có thể thay đổi phiên bản ứng dụng đã cài đặt trước đó bằng chính nó.

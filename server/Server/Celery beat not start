@@ -1,0 +1,148 @@
+
+
+supervisorctl
+asgi:asgi0                       RUNNING   pid 10042, uptime 0:06:39
+asgi:asgi1                       RUNNING   pid 10041, uptime 0:06:39
+asgi:asgi2                       RUNNING   pid 10044, uptime 0:06:39
+asgi:asgi3                       RUNNING   pid 10043, uptime 0:06:39
+celery:celery_00                 RUNNING   pid 10045, uptime 0:06:39
+celery:celery_01                 RUNNING   pid 10046, uptime 0:06:39
+celery_beat                      FATAL     Exited too quickly (process log may have details)
+flower                           RUNNING   pid 10040, uptime 0:06:39
+uwsgi                            RUNNING   pid 10049, uptime 0:06:39
+uwsgi_api                        RUNNING   pid 10048, uptime 0:06:39
+supervisor> start celery_beat
+celery_beat: ERROR (spawn error)
+supervisor> status
+asgi:asgi0                       RUNNING   pid 10042, uptime 0:06:58
+asgi:asgi1                       RUNNING   pid 10041, uptime 0:06:58
+asgi:asgi2                       RUNNING   pid 10044, uptime 0:06:58
+asgi:asgi3                       RUNNING   pid 10043, uptime 0:06:58
+celery:celery_00                 RUNNING   pid 10045, uptime 0:06:58
+celery:celery_01                 RUNNING   pid 10046, uptime 0:06:58
+celery_beat                      STARTING
+flower                           RUNNING   pid 10040, uptime 0:06:58
+uwsgi                            RUNNING   pid 10049, uptime 0:06:58
+uwsgi_api                        RUNNING   pid 10048, uptime 0:06:58
+supervisor> status
+asgi:asgi0                       RUNNING   pid 10042, uptime 0:07:02
+asgi:asgi1                       RUNNING   pid 10041, uptime 0:07:02
+asgi:asgi2                       RUNNING   pid 10044, uptime 0:07:02
+asgi:asgi3                       RUNNING   pid 10043, uptime 0:07:02
+celery:celery_00                 RUNNING   pid 10045, uptime 0:07:02
+celery:celery_01                 RUNNING   pid 10046, uptime 0:07:02
+celery_beat                      STARTING
+flower                           RUNNING   pid 10040, uptime 0:07:02
+uwsgi                            RUNNING   pid 10049, uptime 0:07:02
+uwsgi_api                        RUNNING   pid 10048, uptime 0:07:02
+supervisor> status
+asgi:asgi0                       RUNNING   pid 10042, uptime 0:07:04
+asgi:asgi1                       RUNNING   pid 10041, uptime 0:07:04
+asgi:asgi2                       RUNNING   pid 10044, uptime 0:07:04
+asgi:asgi3                       RUNNING   pid 10043, uptime 0:07:04
+celery:celery_00                 RUNNING   pid 10045, uptime 0:07:04
+celery:celery_01                 RUNNING   pid 10046, uptime 0:07:04
+celery_beat                      BACKOFF   Exited too quickly (process log may have details)
+flower                           RUNNING   pid 10040, uptime 0:07:04
+uwsgi                            RUNNING   pid 10049, uptime 0:07:04
+uwsgi_api                        RUNNING   pid 10048, uptime 0:07:04
+supervisor> exit
+➜  ~  (THIS IS SERVER) cd /app/iteslateq-platform
+➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) cat deploy/supervisor/celery_beat.ini
+[program:celery_beat]
+command=/root/.local/share/virtualenvs/iteslateq-platform-6mb2DECu/bin/celery -A iteslateq beat -l info
+directory=/app/iteslateq-platform
+stdout_logfile=/dev/null
+stdout_logfile_maxbytes=0
+stderr_logfile=/dev/null
+stderr_logfile_maxbytes=0
+autostart=true
+startsecs=10
+stopwaitsecs=600
+autorestart=true
+stopasgroup=true
+➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) /root/.local/share/virtualenvs/iteslateq-platform-6mb2DECu/bin/celery -A iteslateq beat -l info
+celery beat v4.4.0 (cliffs) is starting.
+ERROR: Pidfile (celerybeat.pid) already exists.
+Seems we're already running? (pid: 1510)
+➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) ls -al
+total 6462372
+drwxr-xr-x 25 root root       4096 Jan 10 15:58 .
+drwxr-xr-x  4 root root       4096 Nov  8 04:01 ..
+drwxr-xr-x 11 root root       4096 Jan 10 15:11 accounts
+srw-rw-rw-  1 root root          0 Jan 10 15:58 asgi_0.sock
+lrwxrwxrwx  1 root root          5 Jan 10 15:58 asgi_0.sock.lock -> 10042
+srw-rw-rw-  1 root root          0 Jan 10 15:58 asgi_1.sock
+lrwxrwxrwx  1 root root          5 Jan 10 15:58 asgi_1.sock.lock -> 10041
+srw-rw-rw-  1 root root          0 Jan 10 15:58 asgi_2.sock
+lrwxrwxrwx  1 root root          5 Jan 10 15:58 asgi_2.sock.lock -> 10044
+srw-rw-rw-  1 root root          0 Jan 10 15:58 asgi_3.sock
+lrwxrwxrwx  1 root root          5 Jan 10 15:58 asgi_3.sock.lock -> 10043
+-rw-r--r--  1 root root   47937066 Aug  4 02:01 backup_chip_healthy_20190804
+-rw-r--r--  1 root root          0 Mar 22  2019 celery1.log
+-rw-r--r--  1 root root          5 Dec 30 04:09 celerybeat.pid
+-rw-r--r--  1 root root      36864 Dec 30 10:22 celerybeat-schedule
+drwxr-xr-x 12 root root       4096 Jan 10 15:11 chip_manager
+drwxr-xr-x  2 root root       4096 Feb 12  2019 .circleci
+drwxr-xr-x  6 root root       4096 Aug  6 07:12 code_chip
+drwxr-xr-x  8 root root       4096 Nov 25 06:06 common
+drwxr-xr-x  7 root root       4096 Jan 10 15:11 communicator
+-rw-r--r--  1 root root         21 Oct 14 10:37 .coveragerc
+drwxr-xr-x  6 root root       4096 Feb 12  2019 deploy
+-rw-r--r--  1 root root        263 Feb 12  2019 docker-compose.yml
+drwxr-xr-x  3 root root       4096 Feb 12  2019 docs
+drwxr-xr-x  4 root root       4096 Nov 19 11:00 eform
+-rw-r--r--  1 root root       1382 Jan  7 16:12 .env_custom
+-rw-r--r--  1 root root       1384 Jan  6 02:33 .env_custom.save
+-rw-r--r--  1 root root       1912 Oct 30 16:14 fabfile.py
+drwxr-xr-x 11 root root       4096 Jan 10 15:16 frontend
+drwxr-xr-x  8 root root       4096 Jan 10 16:06 .git
+-rw-r--r--  1 root root       1355 Dec 20 04:50 .gitignore
+drwxr-xr-x  7 root root       4096 Dec  6 07:18 guide
+drwxr-xr-x  2 root root       4096 Jan 10 14:54 https
+drwxr-xr-x  3 root root       4096 Jan  8 15:19 iteslateq
+drwxr-xr-x  3 root root       4096 Feb 12  2019 locale
+-rwxr-xr-x  1 root root        541 Feb 12  2019 manage.py
+drwxr-xr-x 10 root root       4096 Jan  9 08:52 manager
+drwxr-xr-x  4 root root       4096 Jul 20 13:54 media
+-rw-r--r--  1 root root       8760 Nov 12 07:51 newrelic.ini
+drwxr-xr-x  4 root root       4096 Feb 16  2019 node_modules
+-rw-r--r--  1 root root        255 Sep 16 11:04 package-lock.json
+-rw-r--r--  1 root root       1482 Jan  1 02:53 Pipfile
+-rw-r--r--  1 root root      97543 Jan  1 02:53 Pipfile.lock
+-rw-r--r--  1 root root        271 Feb 12  2019 .pre-commit-config.yaml
+drwxr-xr-x  2 root root       4096 Feb 12  2019 public
+-rw-r--r--  1 root root       1358 Feb 16  2019 README.md
+-rw-r--r--  1 root root       2568 Mar 24  2019 requirements.txt
+-rwxr-xr-x  1 root root        992 Feb 16  2019 run-node
+-rw-r--r--  1 root root        324 Feb 12  2019 setup.cfg
+drwxr-xr-x 23 root root       4096 Jan 10 15:16 static
+drwxr-xr-x  2 root root       4096 Feb 12  2019 staticfiles
+drwxr-xr-x  3 root root       4096 Dec 14 16:20 templates
+-rw-r--r--  1 root root       2306 Feb 12  2019 uca-url.eps
+-rw-r--r--  1 root root       1209 Feb 12  2019 uca-url.svg
+srwxrwxrwx  1 root root          0 Jan 10 15:58 uwsgi_api.sock
+srwxrwxrwx  1 root root          0 Jan 10 15:58 uwsgi.sock
+drwxr-xr-x  2 root root       4096 Jul 26 06:46 .vscode
+-rw-r--r--  1 root root  909239601 Jun 24  2019 w1-1.log
+-rw-r--r--  1 root root  908573053 Jun 24  2019 w1-2.log
+-rw-r--r--  1 root root  916530642 Jul 13 02:07 w1-3.log
+-rw-r--r--  1 root root  907850230 Jun 24  2019 w1-4.log
+-rw-r--r--  1 root root  916163749 Jul 13 02:06 w1-5.log
+-rw-r--r--  1 root root  915015918 Jul 13 02:07 w1-6.log
+-rw-r--r--  1 root root 1095754791 Aug 18 04:42 w1.log
+➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) rm celerybeat.pid
+➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) supervisorctl start celery_beat
+celery_beat: started
+➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER) supervisorctl status
+asgi:asgi0                       RUNNING   pid 10042, uptime 0:08:01
+asgi:asgi1                       RUNNING   pid 10041, uptime 0:08:01
+asgi:asgi2                       RUNNING   pid 10044, uptime 0:08:01
+asgi:asgi3                       RUNNING   pid 10043, uptime 0:08:01
+celery:celery_00                 RUNNING   pid 10045, uptime 0:08:01
+celery:celery_01                 RUNNING   pid 10046, uptime 0:08:01
+celery_beat                      RUNNING   pid 9202, uptime 0:00:15
+flower                           RUNNING   pid 10040, uptime 0:08:01
+uwsgi                            RUNNING   pid 10049, uptime 0:08:01
+uwsgi_api                        RUNNING   pid 10048, uptime 0:08:01
+➜  iteslateq-platform git:(master) ✗  (THIS IS SERVER)

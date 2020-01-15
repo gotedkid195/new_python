@@ -1,0 +1,19 @@
+Muốn lưu toàn bộ nội dung công việc đang làm dở, bạn có thể sử dụng git stash như sau
+$ git stash save # or just "git stash"
+
+Sau khi đã git stash 1 hoặc vài lần, bạn có thể xem lại danh sách các lần lưu thay đổi bằng câu lệnh
+
+$ git stash list
+stash@{0}: WIP on <branch-name>: <lastest commit>
+stash@{1}: WIP on <branch-name>: <lastest commit>
+
+Khi muốn lấy lại thay đổi từ stash lần 1 bạn có thể
+
+$ git stash apply stash@{1}
+
+Đôi khi bạn muốn lấy lại thay đổi và xoá nội dung thay đổi lưu trong stack đi, khi đó bạn có thể
+
+$ git stash pop stash@{1}
+Thậm chí nếu muốn xoá toàn bộ stack thì có thể dùng clear
+
+$ git stash clear

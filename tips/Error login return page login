@@ -1,0 +1,14 @@
+Khi vao trang login, press Ctrl + Alt+F3 
+
+Usernam login:
+Password:
+
+sudo chown username:gote.... .Xauthority
+
+reboot de khoi dong lai may, neu xay roi error 
+
+export PATH=/bin:/usr/local/bin:$PATH
+
+test command ls thu 
+
+sudo nano /etc/environment de co permission wirrt 

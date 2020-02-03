@@ -153,19 +153,17 @@ pre-commit 1.20.0
 pre-commit installed at .git/hooks/pre-commit
 
 
-(iteslateq-platform)  ✘ canhnguyen@Latitude-E6420  ~/iteslateq-platform   master  python manage.py migrate               Operations to perform:
+(iteslateq-platform)  ➜  iteslateq-platform git:(master) python manage.py migrate               
+Operations to perform:
   Apply all migrations: accounts, admin, auth, authtoken, chip_manager, code_chip, contenttypes, django_celery_beat, guardian, guide, manager, otp_static, otp_totp, sessions, sites, two_factor
 Running migrations:
   Applying contenttypes.0001_initial... OK
   Applying contenttypes.0002_remove_content_type_name... OK
   Applying auth.0001_initial... OK
   Applying auth.0002_alter_permission_name_max_length... OK
-  Applying auth.0003_alter_user_email_max_length... OK
-  Applying auth.0004_alter_user_username_opts... OK
-  Applying auth.0005_alter_user_last_login_null... OK
-  Applying auth.0006_require_contenttypes_0002... OK
-  Applying auth.0007_alter_validators_add_error_messages... OK
-  Applying auth.0008_alter_user_username_max_length... OK
+
+(iteslateq-platform) ➜  iteslateq-platform git:(master) python manage.py createsuperuser 
+Superuser created successfully.
 
 
 canhnguyen@Latitude-E6420:~$ cat ~/.ssh/id_rsa.pub

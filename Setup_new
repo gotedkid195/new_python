@@ -1,3 +1,8 @@
+canhnguyen@Latitude-E6420:~$ sudo apt-get install ibus-unikey
+canhnguyen@Latitude-E6420:~$ ibus restart
+Vao [ Settings ] -> [ Region  & Language ] -> [Input Sources ] -> Bấm [ + ] để thêm 1 input source “Vietnamese (Unikey)” -> Bấm “Add”
+
+
 canhnguyen@Latitude-E6420:~$ sudo apt install telegram-desktop
 canhnguyen@Latitude-E6420:~$ sudo apt install python3
 canhnguyen@Latitude-E6420:~$ sudo apt install python3-pip python3-dev

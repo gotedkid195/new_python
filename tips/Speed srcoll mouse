@@ -19,7 +19,8 @@ Mỗi khi khởi động hệ điều hành, bạn cần phải chạy IMWheel h
 
 Để tự động chạy IMWheel mỗi khi khởi động hệ điều hành Ubuntu và Linux Mint, bạn chỉ cần thêm nó vào Startup Applications.
 
-Alt + F2 -> gnome-session-properties 
+Alt + F2 -> gnome-session-properties -> Add
+
 Name: IMWheel
 Command: imwheel
 Comment: IMWheel 

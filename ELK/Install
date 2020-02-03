@@ -22,6 +22,10 @@ Processing triggers for systemd (240-6ubuntu5.8) ...
 Synchronizing state of elasticsearch.service with SysV service script with /lib/systemd/systemd-sysv-install.
 Executing: /lib/systemd/systemd-sysv-install enable elasticsearch
 Created symlink /etc/systemd/system/multi-user.target.wants/elasticsearch.service → /lib/systemd/system/elasticsearch.service.
+
+➜  ~ sudo nano /etc/elasticsearch/elasticsearch.yml
+network.host: localhost
+
 ➜  ~ sudo systemctl start elasticsearch.service
 ➜  ~ sudo systemctl status elasticsearch.service
 ● elasticsearch.service - Elasticsearch
@@ -59,8 +63,7 @@ lines 1-14/14 (END)
   },
   "tagline" : "You Know, for Search"
 }
-➜  ~ sudo nano /etc/elasticsearch/elasticsearch.yml
-network.host: localhost
+
 
 ➜  ~ sudo apt-get install logstash
 Successfully created system startup script for Logstash

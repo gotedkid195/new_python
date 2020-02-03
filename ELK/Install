@@ -126,3 +126,17 @@ Thg 2 03 15:07:38 canhnguyen-Latitude-E6420 kibana[24487]: {"type":"log","@times
 Thg 2 03 15:07:38 canhnguyen-Latitude-E6420 kibana[24487]: {"type":"log","@times
 Thg 2 03 15:07:38 canhnguyen-Latitude-E6420 kibana[24487]: {"type":"log","@times
 
+Test send massage Logstash:
+# test_send.py
+        now = localtime(timezone.now()).strftime("%H:%M %d-%m-%Y")
+        extra = {
+            'id_address': f'id_org_1_id_station_2',
+            'name_org': "Org Teslateq",
+            'name_station': "Station office teslateq",
+        }
+        logger = logging.getLogger('log_system')
+        logger = logging.LoggerAdapter(logger, extra)
+        logger.info(f'Test logger {now}')
+        
+# http://localhost:5601/app/kibana#/management/kibana/index_patterns?_g=()
+Create index patterns: logstash-* 

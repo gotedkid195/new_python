@@ -1,0 +1,12 @@
+➜  ~  (THIS IS SERVER) cd /etc/supervisor/conf.d        
+➜  conf.d  (THIS IS SERVER) ll
+total 0
+lrwxrwxrwx 1 root root 50 Aug 13  2019 asgi.conf -> /app/iteslateq-platform/deploy/supervisor/asgi.ini
+lrwxrwxrwx 1 root root 57 Apr 17  2019 celery_beat.conf -> /app/iteslateq-platform/deploy/supervisor/celery_beat.ini
+lrwxrwxrwx 1 root root 52 Feb 13  2019 celery.conf -> /app/iteslateq-platform/deploy/supervisor/celery.ini
+lrwxrwxrwx 1 root root 59 Apr 17  2019 celery_flower.conf -> /app/iteslateq-platform/deploy/supervisor/celery_flower.ini
+lrwxrwxrwx 1 root root 52 Feb 27  2019 flower.conf -> /app/iteslateq-platform/deploy/supervisor/flower.ini
+lrwxrwxrwx 1 root root 55 Apr 17  2019 uwsgi_api.conf -> /app/iteslateq-platform/deploy/supervisor/uwsgi_api.ini
+lrwxrwxrwx 1 root root 51 Feb 13  2019 uwsgi.conf -> /app/iteslateq-platform/deploy/supervisor/uwsgi.ini
+➜  conf.d  (THIS IS SERVER) ln -sn /app/iteslateq-platform/deploy/supervisor/logstash.ini logstash.conf
+➜  conf.d  (THIS IS SERVER) ln -sn /app/iteslateq-platform/deploy/supervisor/elasticsearch.ini elasticsearch.conf

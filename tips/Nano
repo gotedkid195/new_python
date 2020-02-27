@@ -1,0 +1,10 @@
+Comment multiple line in nano
+1. Di chuyen toi dong dau tien ban muon comment.
+2. Press  CTRL + Shift + 6 để đánh dấu dong dau tien ban muon comment.
+3. Di chuyên mũi tên lên xuống để bôi đen các dòng bạn muốn comment.
+4. Nhấn tổ hợp phím comment (mặc định ESC + 3)để comment multiple line 
+
+Customize keyboard nano
+1. cd /etc
+2. sudo nano nanorc
+3. bind ^m comment main  (để thêm tổ hợp phím Ctrl + M <=> comment)

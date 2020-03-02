@@ -1,0 +1,31 @@
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗ git remote -v
+origin	git@github.com:squallcs12/iteslateq.git (fetch)
+origin	git@github.com:squallcs12/iteslateq.git (push)
+
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗  git remote set-url origin git@gitlab.com:teslateq/teslateq.git
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗ git pull
+The authenticity of host 'gitlab.com (35.231.145.151)' can't be established.
+ECDSA key fingerprint is SHA256:HbW3g8zUjNSksFbqTiUWPWg2Bq1x8xdGUrliXFzSnUw.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'gitlab.com,35.231.145.151' (ECDSA) to the list of known hosts.
+git@gitlab.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+(iteslateq-platform) ➜  iteslateq-platform git:(sms-alarm) ✗ cat < ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc
+
+add key ssh len tai khoan gitlab https://gitlab.com/profile/keys
+
+(iteslateq-platform) ➜  iteslateq-platform git:(master) ✗ git pull
+hint: Waiting for your editor to close the file... Error in /home/canhnguyen/.nanorc on line 273: Key name ^/ is invalid
+Merge made by the 'recursive' strategy.
+ .env_test                                          |  32 +++++
+ .gitlab-ci.yml                                     | 141 +++++++++++++++++++++
+ .pre-commit-config.yaml                            |  12 +-
+ accounts/api/login_api.py                          |   8 +-
+ .../{factories.py => factories/org_factory.py}     |   9 +-
+ accounts/urls.py                                   |   2 +-
+ accounts/views/forgot_change_password.py           |   3 +-
+ accounts/views/forgot_password.py                  |  10 +-

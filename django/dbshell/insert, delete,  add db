@@ -77,6 +77,8 @@ DELETE 279934
 teslateq=> delete from chip_manager_value where id < 8000000;
 ERROR:  canceling statement due to statement timeout
 
+teslateq=# delete from chip_manager_valuelog where id < 118000;
+DELETE 518
 
 iteslateq=# ALTER TABLE chip_manager_config ADD COLUMN is_alarm boolean;  // them column vao tabel
 ALTER TABLE
